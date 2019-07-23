@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: https://azd1997.github.io/sitemap.xml
