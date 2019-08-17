@@ -6,10 +6,19 @@
     <description>Recent content on Eiger - A young gopher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jul 2019 19:48:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 17 Aug 2019 02:04:01 +0800</lastBuildDate>
     
 	<atom:link href="https://azd1997.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>安装Ubuntu及其他相关使用教程</title>
+      <link>https://azd1997.github.io/post/linux/installubuntu/</link>
+      <pubDate>Sat, 17 Aug 2019 02:04:01 +0800</pubDate>
+      
+      <guid>https://azd1997.github.io/post/linux/installubuntu/</guid>
+      <description>通过U盘安装Ubuntu 1. 安装 准备好ubuntu镜像文件、rufus(用于制作启动盘，也可以选择别的类似的工具，如UltraISO)、空U盘</description>
+    </item>
     
     <item>
       <title>将本地仓库与远程仓库建立关联</title>
@@ -162,15 +171,6 @@
       
       <guid>https://azd1997.github.io/about/</guid>
       <description>何计长来此，闲眠过一生 你好，我是Eiger，坐标广州。目前学习领域涉及go语言、区块链、物联网等</description>
-    </item>
-    
-    <item>
-      <title>安装Ubuntu及其他相关使用教程</title>
-      <link>https://azd1997.github.io/post/linux/installubuntu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://azd1997.github.io/post/linux/installubuntu/</guid>
-      <description>通过U盘安装Ubuntu 1. 安装 准备好ubuntu镜像文件、rufus(用于制作启动盘，也可以选择别的类似的工具，如UltraISO)、空U盘</description>
     </item>
     
   </channel>
