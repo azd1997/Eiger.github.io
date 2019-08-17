@@ -6,10 +6,46 @@
     <description>Recent content in Posts on Eiger - A young gopher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 17 Aug 2019 02:55:10 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 17 Aug 2019 04:45:58 +0800</lastBuildDate>
     
 	<atom:link href="https://azd1997.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Makefile学习全系列</title>
+      <link>https://azd1997.github.io/post/linux/makefile/</link>
+      <pubDate>Sat, 17 Aug 2019 04:45:58 +0800</pubDate>
+      
+      <guid>https://azd1997.github.io/post/linux/makefile/</guid>
+      <description>Makefile学习全系列</description>
+    </item>
+    
+    <item>
+      <title>git学习全系列</title>
+      <link>https://azd1997.github.io/post/linux/git/</link>
+      <pubDate>Sat, 17 Aug 2019 04:44:28 +0800</pubDate>
+      
+      <guid>https://azd1997.github.io/post/linux/git/</guid>
+      <description>git学习全系列</description>
+    </item>
+    
+    <item>
+      <title>docker学习全系列</title>
+      <link>https://azd1997.github.io/post/linux/docker/</link>
+      <pubDate>Sat, 17 Aug 2019 04:42:16 +0800</pubDate>
+      
+      <guid>https://azd1997.github.io/post/linux/docker/</guid>
+      <description>docker学习全系列 参考： 阮一峰博客 http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html</description>
+    </item>
+    
+    <item>
+      <title>mainflux源码阅读全系列</title>
+      <link>https://azd1997.github.io/post/iot/mainfluxcodereading/</link>
+      <pubDate>Sat, 17 Aug 2019 03:32:15 +0800</pubDate>
+      
+      <guid>https://azd1997.github.io/post/iot/mainfluxcodereading/</guid>
+      <description>mainflux源码阅读 mongodb-writer</description>
+    </item>
     
     <item>
       <title>IotHub物联网平台搭建：从0到1</title>
