@@ -35,7 +35,7 @@
       <pubDate>Sat, 17 Aug 2019 04:42:16 +0800</pubDate>
       
       <guid>https://azd1997.github.io/post/linux/docker/</guid>
-      <description>docker学习全系列 参考： 阮一峰博客 http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html docker-compose安装 从https://github.com/docker/compose</description>
+      <description>docker学习全系列 参考： 阮一峰博客: http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html http://www.ruanyifeng.com/blog/2018/02/docker-wordpress-tutorial.html docker-compose安装 从https://github.com/docker/compo</description>
     </item>
     
     <item>
@@ -62,7 +62,7 @@
       <pubDate>Sat, 17 Aug 2019 02:47:50 +0800</pubDate>
       
       <guid>https://azd1997.github.io/post/iot/installmainflux/</guid>
-      <description>安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1. 获取mainflux源码 4.2. 编</description>
+      <description>安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1 获取mainflux源码 4.2. 编</description>
     </item>
     
     <item>

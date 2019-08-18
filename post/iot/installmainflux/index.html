@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Eiger" /><meta name="description" content="安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1. 获取mainflux源码 4.2. 编" /><meta name="keywords" content="mainflux, docker, protoc" />
+<meta name="author" content="Eiger" /><meta name="description" content="安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1 获取mainflux源码 4.2. 编" /><meta name="keywords" content="mainflux, docker, protoc" />
 
 
 
@@ -39,25 +39,25 @@
 
 
 <meta property="og:title" content="安装mainflux全系列" />
-<meta property="og:description" content="安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1. 获取mainflux源码 4.2. 编" />
+<meta property="og:description" content="安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1 获取mainflux源码 4.2. 编" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://azd1997.github.io/post/iot/installmainflux/" />
 <meta property="article:published_time" content="2019-08-17T02:47:50+08:00" />
 <meta property="article:modified_time" content="2019-08-17T02:47:50+08:00" />
 <meta itemprop="name" content="安装mainflux全系列">
-<meta itemprop="description" content="安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1. 获取mainflux源码 4.2. 编">
+<meta itemprop="description" content="安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1 获取mainflux源码 4.2. 编">
 
 
 <meta itemprop="datePublished" content="2019-08-17T02:47:50&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-17T02:47:50&#43;08:00" />
-<meta itemprop="wordCount" content="23257">
+<meta itemprop="wordCount" content="31552">
 
 
 
 <meta itemprop="keywords" content="mainflux," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="安装mainflux全系列"/>
-<meta name="twitter:description" content="安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1. 获取mainflux源码 4.2. 编"/>
+<meta name="twitter:description" content="安装mainflux 安装mainflux 1.环境准备 2.protoc安装 3. GNU MAKE安装 4. mainflux编译 4.1 获取mainflux源码 4.2. 编"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -135,8 +135,8 @@
         <div class="post-category">
             <a href="/categories/iot/"> iot </a>
             </div>
-          <span class="more-meta"> 23257 words </span>
-          <span class="more-meta"> 47 mins read </span>
+          <span class="more-meta"> 31552 words </span>
+          <span class="more-meta"> 63 mins read </span>
         
       </div>
     </header>
@@ -153,7 +153,7 @@
 <li><a href="#3-gnu-make安装">3. GNU MAKE安装</a></li>
 <li><a href="#4-mainflux编译">4. mainflux编译</a>
 <ul>
-<li><a href="#4-1-获取mainflux源码">4.1. 获取mainflux源码</a></li>
+<li><a href="#4-1-获取mainflux源码">4.1 获取mainflux源码</a></li>
 <li><a href="#4-2-编译所有服务">4.2. 编译所有服务</a></li>
 <li><a href="#4-3-编译单个微服务">4.3. 编译单个微服务</a></li>
 <li><a href="#4-4-编译dockers">4.4. 编译dockers</a></li>
@@ -185,6 +185,46 @@
 <li><a href="#jdk8-与jdk12不可同时启用">jdk8 # 与jdk12不可同时启用</a></li>
 <li><a href="#将-defaults-env-reset-修改为-defaults-env-reset">将 Defaults  env_reset 修改为 Defaults  !env_reset</a></li>
 <li><a href="#文件末追加-alias-sudo-sudo-env-path-path">文件末追加 alias sudo=&lsquo;sudo env PATH=$PATH&rsquo;</a></li>
+<li><a href="#copyright-c-2015-2017-mainflux">Copyright &copy; 2015-2017 Mainflux</a></li>
+<li><a href="#mainflux-is-licensed-under-an-apache-license-version-2-0-license">Mainflux is licensed under an Apache license, version 2.0 license.</a></li>
+<li><a href="#all-rights-not-explicitly-granted-in-the-apache-license-version-2-0-are-reserved">All rights not explicitly granted in the Apache license, version 2.0 are reserved.</a></li>
+<li><a href="#see-the-included-license-file-for-more-details">See the included LICENSE file for more details.</a></li>
+<li><a href="#查看本机docker-docker-compose版本">查看本机docker、docker-compose版本</a></li>
+<li><a href="#当前容器列表-使用docker-ps也是一样的">当前容器列表，使用docker ps也是一样的。</a></li>
+<li><a href="#列举本机所有docker镜像">列举本机所有docker镜像</a></li>
+<li><a href="#docker-environment-variables-in-compose">Docker: Environment variables in Compose</a>
+<ul>
+<li><a href="#nginx">NGINX</a></li>
+<li><a href="#nats">NATS</a></li>
+<li><a href="#redis">REDIS</a></li>
+<li><a href="#ui">UI</a></li>
+<li><a href="#grafana">Grafana</a></li>
+<li><a href="#jaeger">Jaeger</a></li>
+<li><a href="#core-services">Core Services</a>
+<ul>
+<li><a href="#users">Users</a></li>
+<li><a href="#things">Things</a></li>
+<li><a href="#normalizer">Normalizer</a></li>
+<li><a href="#ws">WS</a></li>
+<li><a href="#http">HTTP</a></li>
+<li><a href="#mqtt">MQTT</a></li>
+<li><a href="#coap">COAP</a></li>
+</ul></li>
+<li><a href="#addons-services">Addons Services</a>
+<ul>
+<li><a href="#bootstrap">Bootstrap</a></li>
+<li><a href="#lora">LoRa</a></li>
+<li><a href="#cassandra-writer">Cassandra Writer</a></li>
+<li><a href="#cassandra-reader">Cassandra Reader</a></li>
+<li><a href="#influxdb-writer">InfluxDB Writer</a></li>
+<li><a href="#influxdb-reader">InfluxDB Reader</a></li>
+<li><a href="#mongodb-writer">MongoDB Writer</a></li>
+<li><a href="#mongodb-reader">MongoDB Reader</a></li>
+<li><a href="#postgres-writer">Postgres Writer</a></li>
+<li><a href="#postgres-reader">Postgres Reader</a></li>
+</ul></li>
+<li><a href="#nginx-1">NGINX</a></li>
+</ul></li>
 </ul>
 </nav>
   </div>
@@ -202,7 +242,7 @@
 <li><a href="#2protoc%e5%ae%89%e8%a3%85">2.protoc安装</a></li>
 <li><a href="#3-gnu-make%e5%ae%89%e8%a3%85">3. GNU MAKE安装</a></li>
 <li><a href="#4-mainflux%e7%bc%96%e8%af%91">4. mainflux编译</a></li>
-<li><a href="#41-%e8%8e%b7%e5%8f%96mainflux%e6%ba%90%e7%a0%81">4.1. 获取mainflux源码</a></li>
+<li><a href="#41-%e8%8e%b7%e5%8f%96mainflux%e6%ba%90%e7%a0%81">4.1 获取mainflux源码</a></li>
 <li><a href="#42-%e7%bc%96%e8%af%91%e6%89%80%e6%9c%89%e6%9c%8d%e5%8a%a1">4.2. 编译所有服务</a></li>
 <li><a href="#43-%e7%bc%96%e8%af%91%e5%8d%95%e4%b8%aa%e5%be%ae%e6%9c%8d%e5%8a%a1">4.3. 编译单个微服务</a></li>
 <li><a href="#44-%e7%bc%96%e8%af%91dockers">4.4. 编译dockers</a></li>
@@ -226,7 +266,18 @@
 <li><a href="#105-%e5%ae%89%e8%a3%85java%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83java-8">10.5. 安装Java开发环境（Java 8）</a></li>
 <li><a href="#11-%e5%85%b6%e4%bb%96%e4%b8%80%e4%ba%9b%e9%97%ae%e9%a2%98">11. 其他一些问题</a></li>
 <li><a href="#111-sudoxxx%e6%89%be%e4%b8%8d%e5%88%b0xxx%e5%91%bd%e4%bb%a4">11.1. sudo+xxx:找不到xxx命令</a></li>
+<li><a href="#12-getting-started">12. Getting started</a></li>
+<li><a href="#121-%e8%bf%90%e8%a1%8c%e6%95%b4%e4%b8%aa%e7%b3%bb%e7%bb%9f">12.1 运行整个系统</a></li>
+<li><a href="#122-%e5%ae%89%e8%a3%85mainflux-cli">12.2 安装mainflux-cli</a></li>
+<li><a href="#123-%e7%b3%bb%e7%bb%9f%e6%b5%8b%e8%af%95%e5%87%86%e5%a4%87">12.3 系统测试准备</a></li>
 </ul></li>
+</ul>
+
+<p><strong>注意！！！</strong></p>
+
+<ul>
+<li>1-11节记录依据mainflux开发者文档手动编译、构建、部署的过程。官方开发者文档： <a href="https://mainflux.readthedocs.io/en/latest/dev-guide/">https://mainflux.readthedocs.io/en/latest/dev-guide/</a></li>
+<li>12节记录依据官方文档运行mainflux的过程，此后章节记录mainflux的进一步应用及业务实践。<a href="https://mainflux.readthedocs.io/en/latest/getting-started/">https://mainflux.readthedocs.io/en/latest/getting-started/</a></li>
 </ul>
 
 <h2 id="1-环境准备">1.环境准备</h2>
@@ -312,7 +363,7 @@ sudo apt install build-essential</code></pre></td></tr></table>
 
 <h2 id="4-mainflux编译">4. mainflux编译</h2>
 
-<h3 id="4-1-获取mainflux源码">4.1. 获取mainflux源码</h3>
+<h3 id="4-1-获取mainflux源码">4.1 获取mainflux源码</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
@@ -2780,6 +2831,38 @@ envChanCfgPath = &#34;MF_MONGO_WRITER_CHANNELS_CONFIG&#34;</pre></td></tr></tabl
 </div>
 </div>
 <p>)</p>
+
+<p>func loadConfigs() config {
+  chanCfgPath := mainflux.Env(envChanCfgPath, defChanCfgPath)
+  return config{
+    natsURL:  mainflux.Env(envNatsURL, defNatsURL),
+    logLevel: mainflux.Env(envLogLevel, defLogLevel),
+    port:     mainflux.Env(envPort, defPort),
+    dbName:   mainflux.Env(envDBName, defDBName),
+    dbHost:   mainflux.Env(envDBHost, defDBHost),
+    dbPort:   mainflux.Env(envDBPort, defDBPort),
+    channels: loadChansConfig(chanCfgPath),
+  }
+}</p>
+
+<p>func loadChansConfig(chanConfigPath string) map[string]bool {
+  data, err := ioutil.ReadFile(chanConfigPath)
+  if err != nil {
+    log.Fatal(err)
+  }</p>
+
+<p>var chanCfg chanConfig
+  if err := toml.Unmarshal(data, &amp;chanCfg); err != nil {
+    log.Fatal(err)
+  }</p>
+
+<p>chans := map[string]bool{}
+  for _, ch := range chanCfg.Channels.List {
+    chans[ch] = true
+  }</p>
+
+<p>return chans
+}</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -2795,7 +2878,7 @@ envChanCfgPath = &#34;MF_MONGO_WRITER_CHANNELS_CONFIG&#34;</pre></td></tr></tabl
 <td class="lntd">
 <pre class="chroma">直接可以看到其配置文件路径已经在代码文件中写入了。那说明config/channels.toml是代码内决定的配置文件，但是我们从github拉取项目却没得到这个文件。这是因为通常配置文件都不会上传到项目中。这表示我们现在需要进一步查看mainflux使用文档，想办法生成这个channels.toml。
 
-//TOBECONTINUED
+在官方文档&lt;https://mainflux.readthedocs.io/en/latest/getting-started/&gt;中可以看到
 
 ## 8. mainflux安装
 
@@ -4401,10 +4484,1151 @@ sudo nano /etc/sudoers</p>
 <p>sudo nano /etc/profile</p>
 
 <h1 id="文件末追加-alias-sudo-sudo-env-path-path">文件末追加 alias sudo=&lsquo;sudo env PATH=$PATH&rsquo;</h1>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">执行`source /etc/profile`后生效。
 
-<p>```</p>
+## 12. Getting started
 
-<p>执行<code>source /etc/profile</code>后生效。</p>
+在官网文档&lt;https://mainflux.readthedocs.io/en/latest/getting-started/&gt;介绍了如何开始使用mainflux。这里按照原文档顺序对其作翻译、补充及实践记录。
+
+### 12.1 运行整个系统
+
+首先，电脑上需安装好docker与docker-compose，并将源码拉取到本地，在mainflux根目录下输入`make run`，即可启动mainflux的docker容器组合，并且将在终端看到输出信息。
+
+我们去看下mainflux/Makefile内`run`定义：</pre></td></tr></table>
+</div>
+</div>
+<p>Makefile
+run:
+  docker-compose -f docker/docker-compose.yml up</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这告诉我们`make run`其实是`docker-compose -f docker/docker-compose.yml up`，根据mainflux/docker/docker-compose.yml文件强制拉起（运行）其内描述的所有容器，那么我们来看下docker-compose.yml内容：</pre></td></tr></table>
+</div>
+</div>
+<p>yml
+###</p>
+
+<h1 id="copyright-c-2015-2017-mainflux">Copyright &copy; 2015-2017 Mainflux</h1>
+
+<p>#</p>
+
+<h1 id="mainflux-is-licensed-under-an-apache-license-version-2-0-license">Mainflux is licensed under an Apache license, version 2.0 license.</h1>
+
+<h1 id="all-rights-not-explicitly-granted-in-the-apache-license-version-2-0-are-reserved">All rights not explicitly granted in the Apache license, version 2.0 are reserved.</h1>
+
+<h1 id="see-the-included-license-file-for-more-details">See the included LICENSE file for more details.</h1>
+
+<p>###</p>
+
+<p>version: &ldquo;3&rdquo;</p>
+
+<p>networks:
+  mainflux-base-net:
+    driver: bridge</p>
+
+<p>volumes:
+  mainflux-users-db-volume:
+  mainflux-things-db-volume:
+  mainflux-mqtt-redis-volume:
+  mainflux-things-redis-volume:
+  mainflux-es-redis-volume:</p>
+
+<p>services:
+  nginx:
+    image: nginx:1.16.0-alpine
+    container_name: mainflux-nginx
+    restart: on-failure
+    volumes:
+      - ./nginx/nginx-${AUTH-key}.conf:/etc/nginx/nginx.conf.template
+      - ./nginx/entrypoint.sh:/entrypoint.sh
+      - ./ssl/authorization.js:/etc/nginx/authorization.js
+      - ./ssl/certs/mainflux-server.crt:/etc/ssl/certs/mainflux-server.crt
+      - ./ssl/certs/ca.crt:/etc/ssl/certs/ca.crt
+      - ./ssl/certs/mainflux-server.key:/etc/ssl/private/mainflux-server.key
+      - ./ssl/dhparam.pem:/etc/ssl/certs/dhparam.pem
+    ports:
+      - ${MF_NGINX_HTTP_PORT}:${MF_NGINX_HTTP_PORT}
+      - ${MF_NGINX_SSL_PORT}:${MF_NGINX_SSL_PORT}
+      - ${MF_NGINX_MQTT_PORT}:${MF_NGINX_MQTT_PORT}
+    networks:
+      - mainflux-base-net
+    environment:
+      MF_UI_PORT: ${MF_UI_PORT}
+    command: /entrypoint.sh</p>
+
+<p>nats:
+    image: nats:1.3.0
+    container_name: mainflux-nats
+    restart: on-failure
+    networks:
+      - mainflux-base-net</p>
+
+<p>users-db:
+    image: postgres:10.8-alpine
+    container_name: mainflux-users-db
+    restart: on-failure
+    environment:
+      POSTGRES_USER: ${MF_USERS_DB_USER}
+      POSTGRES_PASSWORD: ${MF_USERS_DB_PASS}
+      POSTGRES_DB: ${MF_USERS_DB}
+    networks:
+      - mainflux-base-net
+    volumes:
+      - mainflux-users-db-volume:/var/lib/postgresql/data</p>
+
+<p>users:
+    image: mainflux/users:latest
+    container_name: mainflux-users
+    depends_on:
+      - users-db
+    expose:
+      - ${MF_USERS_GRPC_PORT}
+    restart: on-failure
+    environment:
+      MF_USERS_LOG_LEVEL: ${MF_USERS_LOG_LEVEL}
+      MF_USERS_DB_HOST: users-db
+      MF_USERS_DB_PORT: ${MF_USERS_DB_PORT}
+      MF_USERS_DB_USER: ${MF_USERS_DB_USER}
+      MF_USERS_DB_PASS: ${MF_USERS_DB_PASS}
+      MF_USERS_DB: ${MF_USERS_DB}
+      MF_USERS_HTTP_PORT: ${MF_USERS_HTTP_PORT}
+      MF_USERS_GRPC_PORT: ${MF_USERS_GRPC_PORT}
+      MF_USERS_SECRET: ${MF_USERS_SECRET}
+      MF_JAEGER_URL: ${MF_JAEGER_URL}
+    ports:
+      - ${MF_USERS_HTTP_PORT}:${MF_USERS_HTTP_PORT}
+    networks:
+      - mainflux-base-net</p>
+
+<p>things-db:
+    image: postgres:10.8-alpine
+    container_name: mainflux-things-db
+    restart: on-failure
+    environment:
+      POSTGRES_USER: ${MF_THINGS_DB_USER}
+      POSTGRES_PASSWORD: ${MF_THINGS_DB_PASS}
+      POSTGRES_DB: ${MF_THINGS_DB}
+    networks:
+      - mainflux-base-net
+    volumes:
+      - mainflux-things-db-volume:/var/lib/postgresql/data</p>
+
+<p>things-redis:
+    image: redis:5.0-alpine
+    container_name: mainflux-things-redis
+    restart: on-failure
+    networks:
+      - mainflux-base-net
+    volumes:
+      - mainflux-things-redis-volume:/data</p>
+
+<p>things:
+    image: mainflux/things:latest
+    container_name: mainflux-things
+    depends_on:
+      - things-db
+      - users
+    restart: on-failure
+    environment:
+      MF_THINGS_LOG_LEVEL: ${MF_THINGS_LOG_LEVEL}
+      MF_THINGS_DB_HOST: things-db
+      MF_THINGS_DB_PORT: ${MF_THINGS_DB_PORT}
+      MF_THINGS_DB_USER: ${MF_THINGS_DB_USER}
+      MF_THINGS_DB_PASS: ${MF_THINGS_DB_PASS}
+      MF_THINGS_DB: ${MF_THINGS_DB}
+      MF_THINGS_CACHE_URL: things-redis:${MF_REDIS_TCP_PORT}
+      MF_THINGS_ES_URL: es-redis:${MF_REDIS_TCP_PORT}
+      MF_THINGS_HTTP_PORT: ${MF_THINGS_HTTP_PORT}
+      MF_THINGS_AUTH_HTTP_PORT: ${MF_THINGS_AUTH_HTTP_PORT}
+      MF_THINGS_AUTH_GRPC_PORT: ${MF_THINGS_AUTH_GRPC_PORT}
+      MF_USERS_URL: users:${MF_USERS_GRPC_PORT}
+      MF_THINGS_SECRET: ${MF_THINGS_SECRET}
+      MF_JAEGER_URL: ${MF_JAEGER_URL}
+    ports:
+      - ${MF_THINGS_HTTP_PORT}:${MF_THINGS_HTTP_PORT}
+      - ${MF_THINGS_AUTH_HTTP_PORT}:${MF_THINGS_AUTH_HTTP_PORT}
+      - ${MF_THINGS_AUTH_GRPC_PORT}:${MF_THINGS_AUTH_GRPC_PORT}
+    networks:
+      - mainflux-base-net</p>
+
+<p>jaeger:
+    image: jaegertracing/all-in-one:1.13
+    container_name: mainflux-jaeger
+    ports:
+      - ${MF_JAEGER_PORT}:${MF_JAEGER_PORT}/udp
+      - ${MF_JAEGER_FRONTEND}:${MF_JAEGER_FRONTEND}
+      - ${MF_JAEGER_COLLECTOR}:${MF_JAEGER_COLLECTOR}
+      - ${MF_JAEGER_CONFIGS}:${MF_JAEGER_CONFIGS}
+    networks:
+      - mainflux-base-net</p>
+
+<p>normalizer:
+    image: mainflux/normalizer:latest
+    container_name: mainflux-normalizer
+    restart: on-failure
+    depends_on:
+      - nats
+    environment:
+      MF_NORMALIZER_LOG_LEVEL: ${MF_NORMALIZER_LOG_LEVEL}
+      MF_NATS_URL: ${MF_NATS_URL}
+      MF_NORMALIZER_PORT: ${MF_NORMALIZER_PORT}
+    ports:
+      - ${MF_NORMALIZER_PORT}:${MF_NORMALIZER_PORT}
+    networks:
+      - mainflux-base-net</p>
+
+<p>ws-adapter:
+    image: mainflux/ws:latest
+    container_name: mainflux-ws
+    depends_on:
+      - things
+      - nats
+    restart: on-failure
+    environment:
+      MF_WS_ADAPTER_LOG_LEVEL: ${MF_WS_ADAPTER_LOG_LEVEL}
+      MF_WS_ADAPTER_PORT: ${MF_WS_ADAPTER_PORT}
+      MF_NATS_URL: ${MF_NATS_URL}
+      MF_THINGS_URL: things:${MF_THINGS_AUTH_GRPC_PORT}
+      MF_JAEGER_URL: ${MF_JAEGER_URL}
+    ports:
+      - ${MF_WS_ADAPTER_PORT}:${MF_WS_ADAPTER_PORT}
+    networks:
+      - mainflux-base-net</p>
+
+<p>http-adapter:
+    image: mainflux/http:latest
+    container_name: mainflux-http
+    depends_on:
+      - things
+      - nats
+    restart: on-failure
+    environment:
+      MF_HTTP_ADAPTER_LOG_LEVEL: debug
+      MF_HTTP_ADAPTER_PORT: ${MF_HTTP_ADAPTER_PORT}
+      MF_NATS_URL: ${MF_NATS_URL}
+      MF_THINGS_URL: things:${MF_THINGS_AUTH_GRPC_PORT}
+      MF_JAEGER_URL: ${MF_JAEGER_URL}
+    ports:
+      - ${MF_HTTP_ADAPTER_PORT}:${MF_HTTP_ADAPTER_PORT}
+    networks:
+      - mainflux-base-net</p>
+
+<p>es-redis:
+    image: redis:5.0-alpine
+    container_name: mainflux-es-redis
+    restart: on-failure
+    networks:
+      - mainflux-base-net
+    volumes:
+      - mainflux-es-redis-volume:/data</p>
+
+<p>mqtt-redis:
+    image: redis:5.0-alpine
+    container_name: mainflux-mqtt-redis
+    restart: on-failure
+    networks:
+      - mainflux-base-net
+    volumes:
+      - mainflux-mqtt-redis-volume:/data</p>
+
+<p>mqtt-adapter:
+    image: mainflux/mqtt:latest
+    container_name: mainflux-mqtt
+    depends_on:
+      - things
+      - nats
+      - mqtt-redis
+    restart: on-failure
+    environment:
+      MF_MQTT_ADAPTER_LOG_LEVEL: ${MF_MQTT_ADAPTER_LOG_LEVEL}
+      MF_MQTT_INSTANCE_ID: mqtt-adapter-1
+      MF_MQTT_ADAPTER_PORT: ${MF_MQTT_ADAPTER_PORT}
+      MF_MQTT_ADAPTER_WS_PORT: ${MF_MQTT_ADAPTER_WS_PORT}
+      MF_MQTT_ADAPTER_REDIS_HOST: mqtt-redis
+      MF_MQTT_ADAPTER_ES_HOST: es-redis
+      MF_NATS_URL: ${MF_NATS_URL}
+      MF_THINGS_URL: things:${MF_THINGS_AUTH_GRPC_PORT}
+      MF_JAEGER_URL: ${MF_JAEGER_URL}
+    ports:
+      - ${MF_MQTT_ADAPTER_PORT}:${MF_MQTT_ADAPTER_PORT}
+      - ${MF_MQTT_ADAPTER_WS_PORT}:${MF_MQTT_ADAPTER_WS_PORT}
+    networks:
+      - mainflux-base-net</p>
+
+<p>coap-adapter:
+    image: mainflux/coap:latest
+    container_name: mainflux-coap
+    depends_on:
+      - things
+      - nats
+    restart: on-failure
+    environment:
+      MF_COAP_ADAPTER_LOG_LEVEL: ${MF_COAP_ADAPTER_LOG_LEVEL}
+      MF_COAP_ADAPTER_PORT: ${MF_COAP_ADAPTER_PORT}
+      MF_NATS_URL: ${MF_NATS_URL}
+      MF_THINGS_URL: things:${MF_THINGS_AUTH_GRPC_PORT}
+      MF_JAEGER_URL: ${MF_JAEGER_URL}
+    ports:
+      - ${MF_COAP_ADAPTER_PORT}:${MF_COAP_ADAPTER_PORT}/udp
+    networks:
+      - mainflux-base-net</p>
+
+<p>ui:
+    image: mainflux/ui:latest
+    container_name: mainflux-ui
+    restart: on-failure
+    ports:
+      - ${MF_UI_PORT}:${MF_UI_PORT}
+    networks:
+      - mainflux-base-net
+    environment:
+      MF_UI_PORT: ${MF_UI_PORT}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">当docker-compose在本地容器中无法找到文件中描述的容器时，会从docker镜像网站去拉取mainflux上传的相应镜像并容器化运行。该文件还描述了各个容器与本机真实物理环境之间的映射关系，之后在使用的过程中应多借助该文档。
+
+好了，我们现在来实际操作一下。
+
+首先，因为之前进行了，docker镜像的手动构建（完成）以及运行测试（部分容器得到启动，并逐次解决了相应的问题），我们需要列举下当前本机的容器及镜像：</pre></td></tr></table>
+</div>
+</div>
+<p>shell</p>
+
+<h1 id="查看本机docker-docker-compose版本">查看本机docker、docker-compose版本</h1>
+
+<p>eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ docker &ndash;version
+Docker version 19.03.1, build 74b1e89
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ docker-compose &ndash;version
+docker-compose version 1.24.1, build 4667896b</p>
+
+<h1 id="当前容器列表-使用docker-ps也是一样的">当前容器列表，使用docker ps也是一样的。</h1>
+
+<p>eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ docker container ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES</p>
+
+<h1 id="列举本机所有docker镜像">列举本机所有docker镜像</h1>
+
+<p>eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ docker images
+REPOSITORY                        TAG                 IMAGE ID            CREATED             SIZE
+mainflux/mqtt-amd64               latest              63c2335da152        4 days ago          177MB
+mainflux/ui-amd64                 latest              56818963b563        4 days ago          16.4MB
+<none>                            <none>              776802a00b76        4 days ago          119MB
+mainflux/bootstrap-amd64          latest              2d6bf08877ff        4 days ago          11.5MB
+mainflux/cli-amd64                latest              9a95ca2d5e58        4 days ago          7.39MB
+mainflux/postgres-reader-amd64    latest              0da4b651447e        4 days ago          10.4MB
+mainflux/postgres-writer-amd64    latest              ca8dc5c8357c        4 days ago          10.2MB
+mainflux/cassandra-reader-amd64   latest              a9abfb5cc14f        4 days ago          10.4MB
+mainflux/cassandra-writer-amd64   latest              b9017e5c7bf7        4 days ago          10.2MB
+mainflux/mongodb-reader-amd64     latest              83312eb43d4e        4 days ago          13.2MB
+mainflux/mongodb-writer-amd64     latest              c2c20ded7746        4 days ago          13MB
+mainflux/influxdb-reader-amd64    latest              602cca6b16df        4 days ago          9.64MB
+mainflux/influxdb-writer-amd64    latest              8291fcbf79c7        4 days ago          9.57MB
+mainflux/lora-amd64               latest              6ad78c136202        4 days ago          10.5MB
+mainflux/coap-amd64               latest              436fb919b3ef        4 days ago          10.5MB
+mainflux/ws-amd64                 latest              ea32ef946286        4 days ago          10.6MB
+mainflux/normalizer-amd64         latest              f457472beb17        4 days ago          12.1MB
+mainflux/http-amd64               latest              e9c5e8cca6d2        4 days ago          10.5MB
+mainflux/things-amd64             latest              6b91b8561a30        4 days ago          11.7MB
+mainflux/users-amd64              latest              64a299ad8ed2        4 days ago          10.6MB
+nginx                             1.14.2-alpine       8a2fb25a19f5        4 months ago        16MB
+golang                            1.10-alpine         7b53e4a31d21        6 months ago        259MB
+node                              10.15.1-alpine      fe6ff768f798        6 months ago        70.7MB
+hello-world                       latest              fce289e99eb9        7 months ago        1.84kB
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">由于执行`make run`其实是从docker官方镜像源下载（本机所编译的镜像带有`-amd64`后缀，与doker-compose.yml描述不同，所以还是会远程拉取）
+
+所以先将docker设置国内的官方镜像源：
+
+编辑`/etc/default/docker`并在末尾追加：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+DOCKER_OPTS=&ldquo;&ndash;registry-mirror=<a href="https://registry.docker-cn.com&quot;">https://registry.docker-cn.com&quot;</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">保存后重启docker即可：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+sudo service docker restart</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">接下来在mainflux根目录下输入`make run`，会将mainflux系统所有微服务自云端拉取到本地运行。
+
+注意，在拉取的过程中可能经常显示拉取失败（TLS握手超时），不要紧，继续输`make run`直到命令行显示所有服务已拉取完成并正要启动。
+
+启动的过程中，在我的电脑上遇到nginx无法启动，提示80端口被占用的情况：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ make run
+docker-compose -f docker/docker-compose.yml up
+mainflux-ui is up-to-date
+mainflux-things-redis is up-to-date
+mainflux-mqtt-redis is up-to-date
+mainflux-es-redis is up-to-date
+mainflux-users-db is up-to-date
+mainflux-things-db is up-to-date
+Starting mainflux-nginx &hellip;
+mainflux-nats is up-to-date
+mainflux-jaeger is up-to-date
+mainflux-users is up-to-date
+mainflux-normalizer is up-to-date
+mainflux-things is up-to-date
+mainflux-mqtt is up-to-date
+mainflux-http is up-to-date
+mainflux-coap is up-to-date
+Starting mainflux-nginx &hellip; error</p>
+
+<p>ERROR: for mainflux-nginx  Cannot start service nginx: driver failed programming external connectivity on endpoint mainflux-nginx (2a91eb3c88807046073423c3a6baf44da0ad26dc65bcb57953b4c71fb094a154): Error starting userland proxy: listen tcp 0.0.0.0:80: bind: address already in use</p>
+
+<p>ERROR: for nginx  Cannot start service nginx: driver failed programming external connectivity on endpoint mainflux-nginx (2a91eb3c88807046073423c3a6baf44da0ad26dc65bcb57953b4c71fb094a154): Error starting userland proxy: listen tcp 0.0.0.0:80: bind: address already in use
+ERROR: Encountered errors while bringing up the project.
+Makefile:151: recipe for target &lsquo;run&rsquo; failed
+make: *** [run] Error 1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">检查下当前80端口被什么程序占用了：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ sudo netstat -lnp | grep 80
+[sudo] password for eiger:
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      1638/nginx: master
+tcp6       0      0 :::8880                 :::*                    LISTEN      8432/docker-proxy
+tcp6       0      0 :::80                   :::*                    LISTEN      1638/nginx: master
+tcp6       0      0 :::8180                 :::*                    LISTEN      7979/docker-proxy
+unix  2      [ ACC ]     STREAM     LISTENING     30380    1789/systemd         /run/user/1000/gnupg/S.gpg-agent.extra
+unix  2      [ ACC ]     STREAM     LISTENING     256023   3607/code            /run/user/1000/vscode-git-askpass-3381c5ecc00801d2295b4bc73b69a9f6a2b09eb2.sock
+unix  2      [ ACC ]     STREAM     LISTENING     280798   7989/containerd-shi  @/containerd-shim/moby/fea1599f1fafb50ec78e979f461f77bb99350205c33c622d1841938e586582ab/shim.sock@
+unix  2      [ ACC ]     STREAM     LISTENING     275172   6812/containerd-shi  @/containerd-shim/moby/aef24619a59af74650841b80deca2addcf0f325659ff88b46e7a415308615aee/shim.sock@
+unix  2      [ ACC ]     STREAM     LISTENING     28280    1333/gdm3            @/tmp/dbus-Iy5HJvQN
+unix  2      [ ACC ]     STREAM     LISTENING     37218    2819/dockerd         /var/run/docker/libnetwork/9fc55081e3a86db3f1611707734cd1856801fe3891d2848d5e21010237bcbfd1.sock</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">什么情况？？？明明是被nginx使用的呀
+
+我们再把当前启动的容器列举一下：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ docker ps
+CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS              PORTS                                                                                                                               NAMES
+4bb5cd9596ea        mainflux/ws:latest              &ldquo;/exe&rdquo;                   16 hours ago        Up 2 minutes        0.0.0.0:8186-&gt;8186/tcp                                                                                                              mainflux-ws
+8c0c4ccbbd55        mainflux/coap:latest            &ldquo;/exe&rdquo;                   16 hours ago        Up 2 minutes        0.0.0.0:5683-&gt;5683/udp                                                                                                              mainflux-coap
+941c67d26e08        mainflux/mqtt:latest            &ldquo;node mqtt.js&rdquo;           16 hours ago        Up 2 minutes        0.0.0.0:1883-&gt;1883/tcp, 0.0.0.0:8880-&gt;8880/tcp                                                                                      mainflux-mqtt
+51206daffd4f        mainflux/http:latest            &ldquo;/exe&rdquo;                   16 hours ago        Up 2 minutes        0.0.0.0:8185-&gt;8185/tcp                                                                                                              mainflux-http
+eb9bc8ac2e0a        mainflux/normalizer:latest      &ldquo;/exe&rdquo;                   16 hours ago        Up 2 minutes        0.0.0.0:8184-&gt;8184/tcp                                                                                                              mainflux-normalizer
+d1579ed65dff        mainflux/things:latest          &ldquo;/exe&rdquo;                   16 hours ago        Up 2 minutes        0.0.0.0:8182-8183-&gt;8182-8183/tcp, 0.0.0.0:8989-&gt;8989/tcp                                                                            mainflux-things
+fea1599f1faf        mainflux/users:latest           &ldquo;/exe&rdquo;                   16 hours ago        Up 2 minutes        0.0.0.0:8180-&gt;8180/tcp, 8181/tcp                                                                                                    mainflux-users
+d20f696b6a37        nats:1.3.0                      &ldquo;/gnatsd -c gnatsd.c…&rdquo;   16 hours ago        Up 2 minutes        4222/tcp, 6222/tcp, 8222/tcp                                                                                                        mainflux-nats
+08b0d3a188f9        postgres:10.8-alpine            &ldquo;docker-entrypoint.s…&rdquo;   16 hours ago        Up 2 minutes        5432/tcp                                                                                                                            mainflux-users-db
+310c048cb4f3        jaegertracing/all-in-one:1.13   &ldquo;/go/bin/all-in-one-…&rdquo;   16 hours ago        Up 2 minutes        5775/udp, 0.0.0.0:5778-&gt;5778/tcp, 0.0.0.0:14268-&gt;14268/tcp, 6832/udp, 0.0.0.0:16686-&gt;16686/tcp, 0.0.0.0:6831-&gt;6831/udp, 14250/tcp   mainflux-jaeger
+d84ae3be3425        redis:5.0-alpine                &ldquo;docker-entrypoint.s…&rdquo;   16 hours ago        Up 2 minutes        6379/tcp                                                                                                                            mainflux-es-redis
+aef24619a59a        redis:5.0-alpine                &ldquo;docker-entrypoint.s…&rdquo;   16 hours ago        Up 2 minutes        6379/tcp                                                                                                                            mainflux-things-redis
+3afec1d3a3e0        postgres:10.8-alpine            &ldquo;docker-entrypoint.s…&rdquo;   16 hours ago        Up 2 minutes        5432/tcp                                                                                                                            mainflux-things-db
+6f05dbae388f        redis:5.0-alpine                &ldquo;docker-entrypoint.s…&rdquo;   16 hours ago        Up 2 minutes        6379/tcp                                                                                                                            mainflux-mqtt-redis
+0f9972dc12c5        mainflux/ui:latest              &ldquo;/entrypoint.sh&rdquo;         16 hours ago        Up 2 minutes        80/tcp, 0.0.0.0:3000-&gt;3000/tcp                                                                                                      mainflux-ui
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这里我们注意nginx服务未开启成功，但是列表中mainflux-ui使用了80/tcp端口。从mainflux的架构图可以看出：
+
+&lt;!--博客生成时使用/images开头，编辑器中使用/static开头--&gt;
+&lt;!--![mainflux-architecture](/images/mainflux-architecture.jpg)--&gt;
+
+![mainflux-architecture](/static/images/mainflux-architecture.jpg)
+
+nginx被用来做负载均衡，但是mainflux-ui也用到了nginx，但它只是用nginx做一个简单的服务器，另外我们去查看docker-compose.yml也可以看到services下nginx的environment项是MF_UI_PORT，这进一步佐证了mainflux-ui使用nginx作web服务器。
+
+现在来查看下mainflux所设置的环境变量，位于mainflux/.env文件中，内容展示如下：</pre></td></tr></table>
+</div>
+</div>
+<p>shell</p>
+
+<h1 id="docker-environment-variables-in-compose">Docker: Environment variables in Compose</h1>
+
+<h2 id="nginx">NGINX</h2>
+
+<p>MF_NGINX_HTTP_PORT=80
+MF_NGINX_SSL_PORT=443
+MF_NGINX_MQTT_PORT=8883</p>
+
+<h2 id="nats">NATS</h2>
+
+<p>MF_NATS_URL=nats://nats:4222</p>
+
+<h2 id="redis">REDIS</h2>
+
+<p>MF_REDIS_TCP_PORT=6379</p>
+
+<h2 id="ui">UI</h2>
+
+<p>MF_UI_PORT=3000</p>
+
+<h2 id="grafana">Grafana</h2>
+
+<p>MF_GRAFANA_PORT=3000</p>
+
+<h2 id="jaeger">Jaeger</h2>
+
+<p>MF_JAEGER_PORT=6831
+MF_JAEGER_FRONTEND=16686
+MF_JAEGER_COLLECTOR=14268
+MF_JAEGER_CONFIGS=5778
+MF_JAEGER_URL=jaeger:6831</p>
+
+<h2 id="core-services">Core Services</h2>
+
+<h3 id="users">Users</h3>
+
+<p>MF_USERS_LOG_LEVEL=debug
+MF_USERS_HTTP_PORT=8180
+MF_USERS_GRPC_PORT=8181
+MF_USERS_DB_PORT=5432
+MF_USERS_DB_USER=mainflux
+MF_USERS_DB_PASS=mainflux
+MF_USERS_DB=users
+MF_USERS_SECRET=secret</p>
+
+<h3 id="things">Things</h3>
+
+<p>MF_THINGS_LOG_LEVEL=debug
+MF_THINGS_HTTP_PORT=8182
+MF_THINGS_AUTH_HTTP_PORT=8989
+MF_THINGS_AUTH_GRPC_PORT=8183
+MF_THINGS_DB_PORT=5432
+MF_THINGS_DB_USER=mainflux
+MF_THINGS_DB_PASS=mainflux
+MF_THINGS_DB=things
+MF_THINGS_SECRET=secret</p>
+
+<h3 id="normalizer">Normalizer</h3>
+
+<p>MF_NORMALIZER_LOG_LEVEL=debug
+MF_NORMALIZER_PORT=8184</p>
+
+<h3 id="ws">WS</h3>
+
+<p>MF_WS_ADAPTER_LOG_LEVEL=debug
+MF_WS_ADAPTER_PORT=8186</p>
+
+<h3 id="http">HTTP</h3>
+
+<p>MF_HTTP_ADAPTER_PORT=8185</p>
+
+<h3 id="mqtt">MQTT</h3>
+
+<p>MF_MQTT_ADAPTER_LOG_LEVEL=debug
+MF_MQTT_ADAPTER_PORT=1883
+MF_MQTT_ADAPTER_WS_PORT=8880</p>
+
+<h3 id="coap">COAP</h3>
+
+<p>MF_COAP_ADAPTER_LOG_LEVEL=debug
+MF_COAP_ADAPTER_PORT=5683</p>
+
+<h2 id="addons-services">Addons Services</h2>
+
+<h3 id="bootstrap">Bootstrap</h3>
+
+<p>MF_BOOTSTRAP_LOG_LEVEL=debug
+MF_BOOTSTRAP_PORT=8202
+MF_BOOTSTRAP_DB_PORT=5432
+MF_BOOTSTRAP_DB_USER=mainflux
+MF_BOOTSTRAP_DB_PASS=mainflux
+MF_BOOTSTRAP_DB=bootstrap
+MF_BOOTSTRAP_DB_SSL_MODE=disable</p>
+
+<h3 id="lora">LoRa</h3>
+
+<p>MF_LORA_ADAPTER_LOG_LEVEL=debug
+MF_LORA_ADAPTER_MESSAGES_URL=tcp://lora.mqtt.mainflux.io:1883
+MF_LORA_ADAPTER_HTTP_PORT=8187</p>
+
+<h3 id="cassandra-writer">Cassandra Writer</h3>
+
+<p>MF_CASSANDRA_WRITER_LOG_LEVEL=debug
+MF_CASSANDRA_WRITER_PORT=8902
+MF_CASSANDRA_WRITER_DB_PORT=9042
+MF_CASSANDRA_WRITER_DB_CLUSTER=mainflux-cassandra
+MF_CASSANDRA_WRITER_DB_KEYSPACE=mainflux</p>
+
+<h3 id="cassandra-reader">Cassandra Reader</h3>
+
+<p>MF_CASSANDRA_READER_LOG_LEVEL=debug
+MF_CASSANDRA_READER_PORT=8903
+MF_CASSANDRA_READER_DB_PORT=9042
+MF_CASSANDRA_READER_DB_CLUSTER=mainflux-cassandra
+MF_CASSANDRA_READER_DB_KEYSPACE=mainflux</p>
+
+<h3 id="influxdb-writer">InfluxDB Writer</h3>
+
+<p>MF_INFLUX_WRITER_LOG_LEVEL=debug
+MF_INFLUX_WRITER_PORT=8900
+MF_INFLUX_WRITER_BATCH_SIZE=5000
+MF_INFLUX_WRITER_BATCH_TIMEOUT=5
+MF_INFLUX_WRITER_DB_PORT=8086
+MF_INFLUX_WRITER_DB_NAME=mainflux
+MF_INFLUX_WRITER_DB_USER=mainflux
+MF_INFLUX_WRITER_DB_PASS=mainflux
+MF_INFLUX_WRITER_GRAFANA_PORT=3001</p>
+
+<h3 id="influxdb-reader">InfluxDB Reader</h3>
+
+<p>MF_INFLUX_READER_LOG_LEVEL=debug
+MF_INFLUX_READER_PORT=8905
+MF_INFLUX_READER_DB_NAME=mainflux
+MF_INFLUX_READER_DB_PORT=8086
+MF_INFLUX_READER_DB_USER=mainflux
+MF_INFLUX_READER_DB_PASS=mainflux</p>
+
+<h3 id="mongodb-writer">MongoDB Writer</h3>
+
+<p>MF_MONGO_WRITER_LOG_LEVEL=debug
+MF_MONGO_WRITER_PORT=8901
+MF_MONGO_WRITER_DB_NAME=mainflux
+MF_MONGO_WRITER_DB_PORT=27017</p>
+
+<h3 id="mongodb-reader">MongoDB Reader</h3>
+
+<p>MF_MONGO_READER_LOG_LEVEL=debug
+MF_MONGO_READER_PORT=8904
+MF_MONGO_READER_DB_NAME=mainflux
+MF_MONGO_READER_DB_PORT=27017</p>
+
+<h3 id="postgres-writer">Postgres Writer</h3>
+
+<p>MF_POSTGRES_WRITER_LOG_LEVEL=debug
+MF_POSTGRES_WRITER_PORT=9104
+MF_POSTGRES_WRITER_DB_PORT=5432
+MF_POSTGRES_WRITER_DB_USER=mainflux
+MF_POSTGRES_WRITER_DB_PASS=mainflux
+MF_POSTGRES_WRITER_DB_NAME=messages
+MF_POSTGRES_WRITER_DB_SSL_MODE=disable
+MF_POSTGRES_WRITER_DB_SSL_CERT=&ldquo;&rdquo;
+MF_POSTGRES_WRITER_DB_SSL_KEY=&ldquo;&rdquo;
+MF_POSTGRES_WRITER_DB_SSL_ROOT_CERT=&ldquo;&rdquo;</p>
+
+<h3 id="postgres-reader">Postgres Reader</h3>
+
+<p>MF_POSTGRES_READER_LOG_LEVEL=debug
+MF_POSTGRES_READER_PORT=9204
+MF_POSTGRES_READER_CLIENT_TLS=false
+MF_POSTGRES_READER_CA_CERTS=&ldquo;&rdquo;
+MF_POSTGRES_READER_DB_PORT=5432
+MF_POSTGRES_READER_DB_USER=mainflux
+MF_POSTGRES_READER_DB_PASS=mainflux
+MF_POSTGRES_READER_DB_NAME=messages
+MF_POSTGRES_READER_DB_SSL_MODE=disable
+MF_POSTGRES_READER_DB_SSL_CERT=&ldquo;&rdquo;
+MF_POSTGRES_READER_DB_SSL_KEY=&ldquo;&rdquo;
+MF_POSTGRES_READER_DB_SSL_ROOT_CERT=&ldquo;&rdquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">可以看出nginx使用了80端口，但是整个mainflux运行时相当于开了两个nginx进程，结果都在抢80端口，这就导致了mainflux-nginx启动失败。
+
+除此之外，还有可能是因为我本机已经安装了nginx服务器（默认端口即是80），这导致真实环境的nginx和容器环境的nginx都想用80端口，从而产生冲突。
+
+（ps: 都是我的推测，没有严格佐证）
+
+现在既然关闭占用80端口的程序不太好办，那么修改nginx端口：</pre></td></tr></table>
+</div>
+</div>
+<p>shell</p>
+
+<h2 id="nginx-1">NGINX</h2>
+
+<p>MF_NGINX_HTTP_PORT=8888  # 找个不容易冲突的就行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">再次`make run`:</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ make run
+docker-compose -f docker/docker-compose.yml up
+Removing mainflux-nginx
+mainflux-nats is up-to-date
+mainflux-mqtt-redis is up-to-date
+mainflux-things-db is up-to-date
+mainflux-es-redis is up-to-date
+mainflux-ui is up-to-date
+mainflux-things-redis is up-to-date
+mainflux-jaeger is up-to-date
+Starting 26e7692f31b7_mainflux-nginx &hellip;
+mainflux-users-db is up-to-date
+mainflux-normalizer is up-to-date
+mainflux-users is up-to-date
+mainflux-things is up-to-date
+mainflux-ws is up-to-date
+mainflux-http is up-to-date
+mainflux-coap is up-to-date
+Starting 26e7692f31b7_mainflux-nginx &hellip; done
+Attaching to mainflux-nats, mainflux-mqtt-redis, mainflux-things-db, mainflux-es-redis, mainflux-ui, mainflux-things-redis, mainflux-jaeger, mainflux-users-db, mainflux-normalizer, mainflux-users, mainflux-things, mainflux-ws, mainflux-http, mainflux-coap, mainflux-mqtt, 26e7692f31b7_mainflux-nginx
+mainflux-mqtt-redis | 1:C 17 Aug 2019 14:22:43.095 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+mainflux-mqtt-redis | 1:C 17 Aug 2019 14:22:43.095 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=1, just started
+mainflux-mqtt-redis | 1:C 17 Aug 2019 14:22:43.095 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+mainflux-mqtt-redis | 1:M 17 Aug 2019 14:22:43.097 * Running mode=standalone, port=6379.
+mainflux-mqtt-redis | 1:M 17 Aug 2019 14:22:43.097 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+mainflux-mqtt-redis | 1:M 17 Aug 2019 14:22:43.097 # Server initialized
+mainflux-mqtt-redis | 1:M 17 Aug 2019 14:22:43.097 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &lsquo;vm.overcommit_memory = 1&rsquo; to /etc/sysctl.conf and then reboot or run the command &lsquo;sysctl vm.overcommit_memory=1&rsquo; for this to take effect.
+mainflux-mqtt-redis | 1:M 17 Aug 2019 14:22:43.097 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &lsquo;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&rsquo; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+mainflux-mqtt-redis | 1:M 17 Aug 2019 14:22:43.097 * Ready to accept connections
+mainflux-mqtt-redis | 1:signal-handler (1566108428) Received SIGTERM scheduling shutdown&hellip;
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:08.140 # User requested shutdown&hellip;
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:08.146 * Saving the final RDB snapshot before exiting.
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:08.148 * DB saved on disk
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:08.148 # Redis is now ready to exit, bye bye&hellip;
+mainflux-mqtt-redis | 1:C 18 Aug 2019 06:07:44.966 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+mainflux-mqtt-redis | 1:C 18 Aug 2019 06:07:44.966 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=1, just started
+mainflux-mqtt-redis | 1:C 18 Aug 2019 06:07:44.966 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:44.968 * Running mode=standalone, port=6379.
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:44.968 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:44.968 # Server initialized
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:44.968 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &lsquo;vm.overcommit_memory = 1&rsquo; to /etc/sysctl.conf and then reboot or run the command &lsquo;sysctl vm.overcommit_memory=1&rsquo; for this to take effect.
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:44.968 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &lsquo;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&rsquo; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:44.968 * DB loaded from disk: 0.000 seconds
+mainflux-mqtt-redis | 1:M 18 Aug 2019 06:07:44.968 * Ready to accept connections
+mainflux-nats   | [1] 2019/08/17 14:22:45.027384 [INF] Starting nats-server version 1.3.0
+mainflux-nats   | [1] 2019/08/17 14:22:45.027438 [INF] Git commit [eed4fbc]
+mainflux-nats   | [1] 2019/08/17 14:22:45.027536 [INF] Starting http monitor on 0.0.0.0:8222
+mainflux-nats   | [1] 2019/08/17 14:22:45.027579 [INF] Listening for client connections on 0.0.0.0:4222
+mainflux-nats   | [1] 2019/08/17 14:22:45.027589 [INF] Server is ready
+mainflux-nats   | [1] 2019/08/17 14:22:45.028198 [INF] Listening for route connections on 0.0.0.0:6222
+mainflux-nats   | [1] 2019/08/18 06:07:47.155252 [INF] Starting nats-server version 1.3.0
+mainflux-nats   | [1] 2019/08/18 06:07:47.155297 [INF] Git commit [eed4fbc]
+mainflux-nats   | [1] 2019/08/18 06:07:47.155421 [INF] Starting http monitor on 0.0.0.0:8222
+mainflux-nats   | [1] 2019/08/18 06:07:47.155498 [INF] Listening for client connections on 0.0.0.0:4222
+mainflux-nats   | [1] 2019/08/18 06:07:47.155511 [INF] Server is ready
+mainflux-nats   | [1] 2019/08/18 06:07:47.156378 [INF] Listening for route connections on 0.0.0.0:6222
+mainflux-things-db | The files belonging to this database system will be owned by user &ldquo;postgres&rdquo;.
+mainflux-things-db | This user must also own the server process.
+mainflux-things-db |
+mainflux-things-db | The database cluster will be initialized with locale &ldquo;en_US.utf8&rdquo;.
+mainflux-things-db | The default database encoding has accordingly been set to &ldquo;UTF8&rdquo;.
+mainflux-things-db | The default text search configuration will be set to &ldquo;english&rdquo;.
+mainflux-things-db |
+mainflux-things-db | Data page checksums are disabled.
+mainflux-things-db |
+mainflux-things-db | fixing permissions on existing directory /var/lib/postgresql/data &hellip; ok
+mainflux-things-db | creating subdirectories &hellip; ok
+mainflux-things-db | selecting default max_connections &hellip; 100
+mainflux-things-db | selecting default shared_buffers &hellip; 128MB
+mainflux-things-db | selecting dynamic shared memory implementation &hellip; posix
+mainflux-things-db | creating configuration files &hellip; ok
+mainflux-things-db | running bootstrap script &hellip; ok
+mainflux-things-db | sh: locale: not found
+mainflux-things-db | 2019-08-17 14:22:42.759 UTC [26] WARNING:  no usable system locales were found
+mainflux-things-db | performing post-bootstrap initialization &hellip; ok
+mainflux-things-db | syncing data to disk &hellip; ok
+mainflux-things-db |
+mainflux-things-db | Success. You can now start the database server using:
+mainflux-things-db |
+mainflux-things-db |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+mainflux-things-db |
+mainflux-things-db |
+mainflux-things-db | WARNING: enabling &ldquo;trust&rdquo; authentication for local connections
+mainflux-things-db | You can change this by editing pg_hba.conf or using the option -A, or
+mainflux-things-db | &ndash;auth-local and &ndash;auth-host, the next time you run initdb.
+mainflux-things-db | waiting for server to start&hellip;.2019-08-17 14:22:43.440 UTC [30] LOG:  listening on Unix socket &ldquo;/var/run/postgresql/.s.PGSQL.5432&rdquo;
+mainflux-things-db | 2019-08-17 14:22:43.480 UTC [31] LOG:  database system was shut down at 2019-08-17 14:22:43 UTC
+mainflux-things-db | 2019-08-17 14:22:43.489 UTC [30] LOG:  database system is ready to accept connections
+mainflux-things-db |  done
+mainflux-things-db | server started
+mainflux-things-db | CREATE DATABASE
+mainflux-things-db |
+mainflux-things-db |
+mainflux-things-db | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+mainflux-things-db |
+mainflux-things-db | waiting for server to shut down&hellip;.2019-08-17 14:22:43.785 UTC [30] LOG:  received fast shutdown request
+mainflux-things-db | 2019-08-17 14:22:43.787 UTC [30] LOG:  aborting any active transactions
+mainflux-things-db | 2019-08-17 14:22:43.788 UTC [30] LOG:  worker process: logical replication launcher (PID 37) exited with exit code 1
+mainflux-things-db | 2019-08-17 14:22:43.788 UTC [32] LOG:  shutting down
+mainflux-things-db | 2019-08-17 14:22:43.826 UTC [30] LOG:  database system is shut down
+mainflux-things-db |  done
+mainflux-things-db | server stopped
+mainflux-things-db |
+mainflux-things-db | PostgreSQL init process complete; ready for start up.
+mainflux-things-db |
+mainflux-things-db | 2019-08-17 14:22:43.893 UTC [1] LOG:  listening on IPv4 address &ldquo;0.0.0.0&rdquo;, port 5432
+mainflux-things-db | 2019-08-17 14:22:43.893 UTC [1] LOG:  listening on IPv6 address &ldquo;::&ldquo;, port 5432
+mainflux-things-db | 2019-08-17 14:22:43.910 UTC [1] LOG:  listening on Unix socket &ldquo;/var/run/postgresql/.s.PGSQL.5432&rdquo;
+mainflux-things-db | 2019-08-17 14:22:43.947 UTC [41] LOG:  database system was shut down at 2019-08-17 14:22:43 UTC
+mainflux-things-db | 2019-08-17 14:22:43.956 UTC [1] LOG:  database system is ready to accept connections
+mainflux-things-db | 2019-08-18 06:07:08.879 UTC [1] LOG:  received smart shutdown request
+mainflux-things-db | 2019-08-18 06:07:08.894 UTC [1] LOG:  worker process: logical replication launcher (PID 47) exited with exit code 1
+mainflux-things-db | 2019-08-18 06:07:08.895 UTC [42] LOG:  shutting down
+mainflux-things-db | 2019-08-18 06:07:08.932 UTC [1] LOG:  database system is shut down
+mainflux-things-db | 2019-08-18 06:07:42.226 UTC [1] LOG:  listening on IPv4 address &ldquo;0.0.0.0&rdquo;, port 5432
+mainflux-things-db | 2019-08-18 06:07:42.226 UTC [1] LOG:  listening on IPv6 address &ldquo;::&ldquo;, port 5432
+mainflux-things-db | 2019-08-18 06:07:42.245 UTC [1] LOG:  listening on Unix socket &ldquo;/var/run/postgresql/.s.PGSQL.5432&rdquo;
+mainflux-things-db | 2019-08-18 06:07:42.285 UTC [18] LOG:  database system was shut down at 2019-08-18 06:07:08 UTC
+mainflux-things-db | 2019-08-18 06:07:42.299 UTC [1] LOG:  database system is ready to accept connections
+mainflux-es-redis | 1:C 17 Aug 2019 14:22:41.792 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+mainflux-es-redis | 1:C 17 Aug 2019 14:22:41.793 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=1, just started
+mainflux-es-redis | 1:C 17 Aug 2019 14:22:41.793 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+mainflux-es-redis | 1:M 17 Aug 2019 14:22:41.796 * Running mode=standalone, port=6379.
+mainflux-es-redis | 1:M 17 Aug 2019 14:22:41.796 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+mainflux-es-redis | 1:M 17 Aug 2019 14:22:41.796 # Server initialized
+mainflux-es-redis | 1:M 17 Aug 2019 14:22:41.796 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &lsquo;vm.overcommit_memory = 1&rsquo; to /etc/sysctl.conf and then reboot or run the command &lsquo;sysctl vm.overcommit_memory=1&rsquo; for this to take effect.
+mainflux-es-redis | 1:M 17 Aug 2019 14:22:41.796 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &lsquo;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&rsquo; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+mainflux-es-redis | 1:M 17 Aug 2019 14:22:41.796 * Ready to accept connections
+mainflux-es-redis | 1:signal-handler (1566108417) Received SIGTERM scheduling shutdown&hellip;
+mainflux-es-redis | 1:M 18 Aug 2019 06:06:57.570 # User requested shutdown&hellip;
+mainflux-es-redis | 1:M 18 Aug 2019 06:06:57.619 * Saving the final RDB snapshot before exiting.
+mainflux-es-redis | 1:M 18 Aug 2019 06:06:57.629 * DB saved on disk
+mainflux-es-redis | 1:M 18 Aug 2019 06:06:57.629 # Redis is now ready to exit, bye bye&hellip;
+mainflux-es-redis | 1:C 18 Aug 2019 06:07:48.200 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+mainflux-es-redis | 1:C 18 Aug 2019 06:07:48.200 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=1, just started
+mainflux-es-redis | 1:C 18 Aug 2019 06:07:48.200 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+mainflux-es-redis | 1:M 18 Aug 2019 06:07:48.202 * Running mode=standalone, port=6379.
+mainflux-es-redis | 1:M 18 Aug 2019 06:07:48.202 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+mainflux-es-redis | 1:M 18 Aug 2019 06:07:48.202 # Server initialized
+mainflux-es-redis | 1:M 18 Aug 2019 06:07:48.202 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &lsquo;vm.overcommit_memory = 1&rsquo; to /etc/sysctl.conf and then reboot or run the command &lsquo;sysctl vm.overcommit_memory=1&rsquo; for this to take effect.
+mainflux-es-redis | 1:M 18 Aug 2019 06:07:48.202 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &lsquo;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&rsquo; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+mainflux-es-redis | 1:M 18 Aug 2019 06:07:48.209 * DB loaded from disk: 0.007 seconds
+mainflux-es-redis | 1:M 18 Aug 2019 06:07:48.209 * Ready to accept connections
+mainflux-jaeger | 2019/08/17 14:22:46 maxprocs: Leaving GOMAXPROCS=4: CPU quota undefined
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2253852,&ldquo;caller&rdquo;:&ldquo;flags/service.go:115&rdquo;,&ldquo;msg&rdquo;:&ldquo;Mounting metrics handler on admin server&rdquo;,&ldquo;route&rdquo;:&ldquo;/metrics&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2256029,&ldquo;caller&rdquo;:&ldquo;flags/admin.go:108&rdquo;,&ldquo;msg&rdquo;:&ldquo;Mounting health check on admin server&rdquo;,&ldquo;route&rdquo;:&ldquo;/&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.225683,&ldquo;caller&rdquo;:&ldquo;flags/admin.go:114&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting admin HTTP server&rdquo;,&ldquo;http-port&rdquo;:14269}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2257037,&ldquo;caller&rdquo;:&ldquo;flags/admin.go:100&rdquo;,&ldquo;msg&rdquo;:&ldquo;Admin server started&rdquo;,&ldquo;http-port&rdquo;:14269,&ldquo;health-status&rdquo;:&ldquo;unavailable&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2808497,&ldquo;caller&rdquo;:&ldquo;memory/factory.go:55&rdquo;,&ldquo;msg&rdquo;:&ldquo;Memory storage initialized&rdquo;,&ldquo;configuration&rdquo;:{&ldquo;MaxTraces&rdquo;:0}}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2881448,&ldquo;caller&rdquo;:&ldquo;grpc/builder.go:75&rdquo;,&ldquo;msg&rdquo;:&ldquo;Agent requested insecure grpc connection to collector(s)&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2888844,&ldquo;caller&rdquo;:&ldquo;grpc/clientconn.go:242&rdquo;,&ldquo;msg&rdquo;:&ldquo;parsed scheme: \&rdquo;\&ldquo;&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2898757,&ldquo;caller&rdquo;:&ldquo;grpc/clientconn.go:248&rdquo;,&ldquo;msg&rdquo;:&ldquo;scheme \&rdquo;\&rdquo; not registered, fallback to default scheme&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2899027,&ldquo;caller&rdquo;:&ldquo;grpc/resolver_conn_wrapper.go:113&rdquo;,&ldquo;msg&rdquo;:&ldquo;ccResolverWrapper: sending update to cc: {[{127.0.0.1:14250 0  <nil>}] }&ldquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2901025,&ldquo;caller&rdquo;:&ldquo;base/balancer.go:76&rdquo;,&ldquo;msg&rdquo;:&ldquo;base.baseBalancer: got new resolver state: {[{127.0.0.1:14250 0  <nil>}] }&ldquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.290183,&ldquo;caller&rdquo;:&ldquo;base/balancer.go:130&rdquo;,&ldquo;msg&rdquo;:&ldquo;base.baseBalancer: handle SubConn state change: 0xc000446040, CONNECTING&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2915914,&ldquo;caller&rdquo;:&ldquo;all-in-one/main.go:198&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting agent&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2918808,&ldquo;caller&rdquo;:&ldquo;grpc/clientconn.go:1139&rdquo;,&ldquo;msg&rdquo;:&ldquo;grpc: addrConn.createTransport failed to connect to {127.0.0.1:14250 0  <nil>}. Err :connection error: desc = \&ldquo;transport: Error while dialing dial tcp 127.0.0.1:14250: connect: connection refused\&ldquo;. Reconnecting&hellip;&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2919507,&ldquo;caller&rdquo;:&ldquo;base/balancer.go:130&rdquo;,&ldquo;msg&rdquo;:&ldquo;base.baseBalancer: handle SubConn state change: 0xc000446040, TRANSIENT_FAILURE&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2920654,&ldquo;caller&rdquo;:&ldquo;app/agent.go:68&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting jaeger-agent HTTP server&rdquo;,&ldquo;http-port&rdquo;:5778}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2961102,&ldquo;caller&rdquo;:&ldquo;all-in-one/main.go:241&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting jaeger-collector TChannel server&rdquo;,&ldquo;port&rdquo;:14267}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.296204,&ldquo;caller&rdquo;:&ldquo;grpcserver/grpc_server.go:64&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting jaeger-collector gRPC server&rdquo;,&ldquo;grpc-port&rdquo;:&ldquo;14250&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2963338,&ldquo;caller&rdquo;:&ldquo;all-in-one/main.go:259&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting jaeger-collector HTTP server&rdquo;,&ldquo;http-port&rdquo;:14268}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2963643,&ldquo;caller&rdquo;:&ldquo;querysvc/query_service.go:130&rdquo;,&ldquo;msg&rdquo;:&ldquo;Archive storage not created&rdquo;,&ldquo;reason&rdquo;:&ldquo;archive storage not supported&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2967296,&ldquo;caller&rdquo;:&ldquo;all-in-one/main.go:341&rdquo;,&ldquo;msg&rdquo;:&ldquo;Archive storage not initialized&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2974143,&ldquo;caller&rdquo;:&ldquo;healthcheck/handler.go:129&rdquo;,&ldquo;msg&rdquo;:&ldquo;Health Check state change&rdquo;,&ldquo;status&rdquo;:&ldquo;ready&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2974267,&ldquo;caller&rdquo;:&ldquo;app/server.go:111&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting HTTP server&rdquo;,&ldquo;port&rdquo;:16686}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2974463,&ldquo;caller&rdquo;:&ldquo;app/server.go:134&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting CMUX server&rdquo;,&ldquo;port&rdquo;:16686}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566051766.2974427,&ldquo;caller&rdquo;:&ldquo;app/server.go:124&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting GRPC server&rdquo;,&ldquo;port&rdquo;:16686}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108417.5729327,&ldquo;caller&rdquo;:&ldquo;flags/service.go:145&rdquo;,&ldquo;msg&rdquo;:&ldquo;Shutting down&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108417.5810058,&ldquo;caller&rdquo;:&ldquo;healthcheck/handler.go:129&rdquo;,&ldquo;msg&rdquo;:&ldquo;Health Check state change&rdquo;,&ldquo;status&rdquo;:&ldquo;unavailable&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108417.729596,&ldquo;caller&rdquo;:&ldquo;flags/service.go:153&rdquo;,&ldquo;msg&rdquo;:&ldquo;Shutdown complete&rdquo;}
+mainflux-jaeger | 2019/08/18 06:07:46 maxprocs: Leaving GOMAXPROCS=4: CPU quota undefined
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.326627,&ldquo;caller&rdquo;:&ldquo;flags/service.go:115&rdquo;,&ldquo;msg&rdquo;:&ldquo;Mounting metrics handler on admin server&rdquo;,&ldquo;route&rdquo;:&ldquo;/metrics&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3268385,&ldquo;caller&rdquo;:&ldquo;flags/admin.go:108&rdquo;,&ldquo;msg&rdquo;:&ldquo;Mounting health check on admin server&rdquo;,&ldquo;route&rdquo;:&ldquo;/&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3269293,&ldquo;caller&rdquo;:&ldquo;flags/admin.go:114&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting admin HTTP server&rdquo;,&ldquo;http-port&rdquo;:14269}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3269587,&ldquo;caller&rdquo;:&ldquo;flags/admin.go:100&rdquo;,&ldquo;msg&rdquo;:&ldquo;Admin server started&rdquo;,&ldquo;http-port&rdquo;:14269,&ldquo;health-status&rdquo;:&ldquo;unavailable&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3384168,&ldquo;caller&rdquo;:&ldquo;memory/factory.go:55&rdquo;,&ldquo;msg&rdquo;:&ldquo;Memory storage initialized&rdquo;,&ldquo;configuration&rdquo;:{&ldquo;MaxTraces&rdquo;:0}}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.345234,&ldquo;caller&rdquo;:&ldquo;grpc/builder.go:75&rdquo;,&ldquo;msg&rdquo;:&ldquo;Agent requested insecure grpc connection to collector(s)&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.346065,&ldquo;caller&rdquo;:&ldquo;grpc/clientconn.go:242&rdquo;,&ldquo;msg&rdquo;:&ldquo;parsed scheme: \&rdquo;\&ldquo;&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.347057,&ldquo;caller&rdquo;:&ldquo;grpc/clientconn.go:248&rdquo;,&ldquo;msg&rdquo;:&ldquo;scheme \&rdquo;\&rdquo; not registered, fallback to default scheme&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3471303,&ldquo;caller&rdquo;:&ldquo;grpc/resolver_conn_wrapper.go:113&rdquo;,&ldquo;msg&rdquo;:&ldquo;ccResolverWrapper: sending update to cc: {[{127.0.0.1:14250 0  <nil>}] }&ldquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3473892,&ldquo;caller&rdquo;:&ldquo;base/balancer.go:76&rdquo;,&ldquo;msg&rdquo;:&ldquo;base.baseBalancer: got new resolver state: {[{127.0.0.1:14250 0  <nil>}] }&ldquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3474433,&ldquo;caller&rdquo;:&ldquo;base/balancer.go:130&rdquo;,&ldquo;msg&rdquo;:&ldquo;base.baseBalancer: handle SubConn state change: 0xc0003e0050, CONNECTING&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3480797,&ldquo;caller&rdquo;:&ldquo;all-in-one/main.go:198&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting agent&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3481708,&ldquo;caller&rdquo;:&ldquo;app/agent.go:68&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting jaeger-agent HTTP server&rdquo;,&ldquo;http-port&rdquo;:5778}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3481946,&ldquo;caller&rdquo;:&ldquo;grpc/clientconn.go:1139&rdquo;,&ldquo;msg&rdquo;:&ldquo;grpc: addrConn.createTransport failed to connect to {127.0.0.1:14250 0  <nil>}. Err :connection error: desc = \&ldquo;transport: Error while dialing dial tcp 127.0.0.1:14250: connect: connection refused\&ldquo;. Reconnecting&hellip;&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3482506,&ldquo;caller&rdquo;:&ldquo;base/balancer.go:130&rdquo;,&ldquo;msg&rdquo;:&ldquo;base.baseBalancer: handle SubConn state change: 0xc0003e0050, TRANSIENT_FAILURE&rdquo;,&ldquo;system&rdquo;:&ldquo;grpc&rdquo;,&ldquo;grpc_log&rdquo;:true}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3515522,&ldquo;caller&rdquo;:&ldquo;all-in-one/main.go:241&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting jaeger-collector TChannel server&rdquo;,&ldquo;port&rdquo;:14267}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3516686,&ldquo;caller&rdquo;:&ldquo;grpcserver/grpc_server.go:64&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting jaeger-collector gRPC server&rdquo;,&ldquo;grpc-port&rdquo;:&ldquo;14250&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3520057,&ldquo;caller&rdquo;:&ldquo;all-in-one/main.go:259&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting jaeger-collector HTTP server&rdquo;,&ldquo;http-port&rdquo;:14268}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3520448,&ldquo;caller&rdquo;:&ldquo;querysvc/query_service.go:130&rdquo;,&ldquo;msg&rdquo;:&ldquo;Archive storage not created&rdquo;,&ldquo;reason&rdquo;:&ldquo;archive storage not supported&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3523493,&ldquo;caller&rdquo;:&ldquo;all-in-one/main.go:341&rdquo;,&ldquo;msg&rdquo;:&ldquo;Archive storage not initialized&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3539069,&ldquo;caller&rdquo;:&ldquo;healthcheck/handler.go:129&rdquo;,&ldquo;msg&rdquo;:&ldquo;Health Check state change&rdquo;,&ldquo;status&rdquo;:&ldquo;ready&rdquo;}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3539748,&ldquo;caller&rdquo;:&ldquo;app/server.go:134&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting CMUX server&rdquo;,&ldquo;port&rdquo;:16686}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.3540401,&ldquo;caller&rdquo;:&ldquo;app/server.go:111&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting HTTP server&rdquo;,&ldquo;port&rdquo;:16686}
+mainflux-jaeger | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;ts&rdquo;:1566108466.354081,&ldquo;caller&rdquo;:&ldquo;app/server.go:124&rdquo;,&ldquo;msg&rdquo;:&ldquo;Starting GRPC server&rdquo;,&ldquo;port&rdquo;:16686}
+mainflux-things-redis | 1:C 17 Aug 2019 14:22:44.664 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+mainflux-things-redis | 1:C 17 Aug 2019 14:22:44.664 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=1, just started
+mainflux-things-redis | 1:C 17 Aug 2019 14:22:44.664 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+mainflux-things-redis | 1:M 17 Aug 2019 14:22:44.666 * Running mode=standalone, port=6379.
+mainflux-things-redis | 1:M 17 Aug 2019 14:22:44.667 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+mainflux-things-redis | 1:M 17 Aug 2019 14:22:44.667 # Server initialized
+mainflux-things-redis | 1:M 17 Aug 2019 14:22:44.667 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &lsquo;vm.overcommit_memory = 1&rsquo; to /etc/sysctl.conf and then reboot or run the command &lsquo;sysctl vm.overcommit_memory=1&rsquo; for this to take effect.
+mainflux-things-redis | 1:M 17 Aug 2019 14:22:44.667 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &lsquo;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&rsquo; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+mainflux-things-redis | 1:M 17 Aug 2019 14:22:44.667 * Ready to accept connections
+mainflux-things-redis | 1:signal-handler (1566108417) Received SIGTERM scheduling shutdown&hellip;
+mainflux-things-redis | 1:M 18 Aug 2019 06:06:57.570 # User requested shutdown&hellip;
+mainflux-things-redis | 1:M 18 Aug 2019 06:06:57.621 * Saving the final RDB snapshot before exiting.
+mainflux-things-redis | 1:M 18 Aug 2019 06:06:57.653 * DB saved on disk
+mainflux-things-redis | 1:M 18 Aug 2019 06:06:57.653 # Redis is now ready to exit, bye bye&hellip;
+mainflux-things-redis | 1:C 18 Aug 2019 06:07:43.988 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+mainflux-things-redis | 1:C 18 Aug 2019 06:07:43.989 # Redis version=5.0.5, bits=64, commit=00000000, modified=0, pid=1, just started
+mainflux-things-redis | 1:C 18 Aug 2019 06:07:43.989 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+mainflux-things-redis | 1:M 18 Aug 2019 06:07:43.991 * Running mode=standalone, port=6379.
+mainflux-things-redis | 1:M 18 Aug 2019 06:07:43.991 # WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.
+mainflux-things-redis | 1:M 18 Aug 2019 06:07:43.991 # Server initialized
+mainflux-things-redis | 1:M 18 Aug 2019 06:07:43.991 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &lsquo;vm.overcommit_memory = 1&rsquo; to /etc/sysctl.conf and then reboot or run the command &lsquo;sysctl vm.overcommit_memory=1&rsquo; for this to take effect.
+mainflux-things-redis | 1:M 18 Aug 2019 06:07:43.991 # WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command &lsquo;echo never &gt; /sys/kernel/mm/transparent_hugepage/enabled&rsquo; as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.
+mainflux-things-redis | 1:M 18 Aug 2019 06:07:43.992 * DB loaded from disk: 0.000 seconds
+mainflux-things-redis | 1:M 18 Aug 2019 06:07:43.992 * Ready to accept connections
+mainflux-users-db | The files belonging to this database system will be owned by user &ldquo;postgres&rdquo;.
+mainflux-users-db | This user must also own the server process.
+mainflux-users-db |
+mainflux-users-db | The database cluster will be initialized with locale &ldquo;en_US.utf8&rdquo;.
+mainflux-users-db | The default database encoding has accordingly been set to &ldquo;UTF8&rdquo;.
+mainflux-users-db | The default text search configuration will be set to &ldquo;english&rdquo;.
+mainflux-users-db |
+mainflux-users-db | Data page checksums are disabled.
+mainflux-users-db |
+mainflux-users-db | fixing permissions on existing directory /var/lib/postgresql/data &hellip; ok
+mainflux-users-db | creating subdirectories &hellip; ok
+mainflux-users-db | selecting default max_connections &hellip; 100
+mainflux-users-db | selecting default shared_buffers &hellip; 128MB
+mainflux-users-db | selecting dynamic shared memory implementation &hellip; posix
+mainflux-users-db | creating configuration files &hellip; ok
+mainflux-users-db | running bootstrap script &hellip; ok
+mainflux-users-db | sh: locale: not found
+mainflux-users-db | 2019-08-17 14:22:42.047 UTC [26] WARNING:  no usable system locales were found
+mainflux-users-db | performing post-bootstrap initialization &hellip; ok
+mainflux-users-db | syncing data to disk &hellip; ok
+mainflux-users-db |
+mainflux-users-db | Success. You can now start the database server using:
+mainflux-users-db |
+mainflux-users-db |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+mainflux-users-db |
+mainflux-users-db |
+mainflux-users-db | WARNING: enabling &ldquo;trust&rdquo; authentication for local connections
+mainflux-users-db | You can change this by editing pg_hba.conf or using the option -A, or
+mainflux-users-db | &ndash;auth-local and &ndash;auth-host, the next time you run initdb.
+mainflux-users-db | waiting for server to start&hellip;.2019-08-17 14:22:42.807 UTC [30] LOG:  listening on Unix socket &ldquo;/var/run/postgresql/.s.PGSQL.5432&rdquo;
+mainflux-users-db | 2019-08-17 14:22:42.862 UTC [31] LOG:  database system was shut down at 2019-08-17 14:22:42 UTC
+mainflux-users-db | 2019-08-17 14:22:42.871 UTC [30] LOG:  database system is ready to accept connections
+mainflux-users-db |  done
+mainflux-users-db | server started
+mainflux-users-db | CREATE DATABASE
+mainflux-users-db |
+mainflux-users-db |
+mainflux-users-db | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+mainflux-users-db |
+mainflux-users-db | waiting for server to shut down&hellip;.2019-08-17 14:22:43.169 UTC [30] LOG:  received fast shutdown request
+mainflux-users-db | 2019-08-17 14:22:43.171 UTC [30] LOG:  aborting any active transactions
+mainflux-users-db | 2019-08-17 14:22:43.172 UTC [30] LOG:  worker process: logical replication launcher (PID 37) exited with exit code 1
+mainflux-users-db | 2019-08-17 14:22:43.172 UTC [32] LOG:  shutting down
+mainflux-users-db | 2019-08-17 14:22:43.216 UTC [30] LOG:  database system is shut down
+mainflux-users-db |  done
+mainflux-users-db | server stopped
+mainflux-users-db |
+mainflux-users-db | PostgreSQL init process complete; ready for start up.
+mainflux-users-db |
+mainflux-users-db | 2019-08-17 14:22:43.359 UTC [1] LOG:  listening on IPv4 address &ldquo;0.0.0.0&rdquo;, port 5432
+mainflux-users-db | 2019-08-17 14:22:43.359 UTC [1] LOG:  listening on IPv6 address &ldquo;::&ldquo;, port 5432
+mainflux-users-db | 2019-08-17 14:22:43.373 UTC [1] LOG:  listening on Unix socket &ldquo;/var/run/postgresql/.s.PGSQL.5432&rdquo;
+mainflux-users-db | 2019-08-17 14:22:43.406 UTC [41] LOG:  database system was shut down at 2019-08-17 14:22:43 UTC
+mainflux-users-db | 2019-08-17 14:22:43.421 UTC [1] LOG:  database system is ready to accept connections
+mainflux-users-db | 2019-08-18 06:07:09.341 UTC [1] LOG:  received smart shutdown request
+mainflux-users-db | 2019-08-18 06:07:09.349 UTC [1] LOG:  worker process: logical replication launcher (PID 47) exited with exit code 1
+mainflux-users-db | 2019-08-18 06:07:09.349 UTC [42] LOG:  shutting down
+mainflux-users-db | 2019-08-18 06:07:09.416 UTC [1] LOG:  database system is shut down
+mainflux-users-db | 2019-08-18 06:07:50.280 UTC [1] LOG:  listening on IPv4 address &ldquo;0.0.0.0&rdquo;, port 5432
+mainflux-users-db | 2019-08-18 06:07:50.280 UTC [1] LOG:  listening on IPv6 address &ldquo;::&ldquo;, port 5432
+mainflux-users-db | 2019-08-18 06:07:50.310 UTC [1] LOG:  listening on Unix socket &ldquo;/var/run/postgresql/.s.PGSQL.5432&rdquo;
+mainflux-users-db | 2019-08-18 06:07:50.362 UTC [18] LOG:  database system was shut down at 2019-08-18 06:07:09 UTC
+mainflux-users-db | 2019-08-18 06:07:50.373 UTC [1] LOG:  database system is ready to accept connections
+mainflux-ws     | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;gRPC communication is not encrypted&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:54.741095445Z&rdquo;}
+mainflux-ws     | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;WebSocket adapter service started, exposed port 8186&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:54.750836216Z&rdquo;}
+mainflux-ws     | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;gRPC communication is not encrypted&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:56.461422464Z&rdquo;}
+mainflux-ws     | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;WebSocket adapter service started, exposed port 8186&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:56.464088709Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Users service started using http, exposed port 8180&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:44.079984747Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Users gRPC service started using http on port 8181&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:44.08013605Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Users gRPC service started, exposed port 8181&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:44.080197181Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Users service started using http, exposed port 8180&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:51.4680891Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Users gRPC service started using http on port 8181&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:51.46830819Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Users gRPC service started, exposed port 8181&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:51.468404853Z&rdquo;}
+mainflux-normalizer | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Normalizer service started, exposed port 8184&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:48.535022537Z&rdquo;}
+mainflux-normalizer | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Normalizer service started, exposed port 8184&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:49.373415242Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;gRPC communication is not encrypted&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:49.750079428Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Things service started using http on port 8182&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:49.752361349Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Things service started using http on port 8182&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:49.752361346Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Things gRPC service started using http on port 8183&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:49.752597507Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;gRPC communication is not encrypted&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:52.727918949Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Things gRPC service started using http on port 8183&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:52.738161107Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Things service started using http on port 8182&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:52.738246397Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Things service started using http on port 8182&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:52.7383652Z&rdquo;}
+mainflux-http   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;gRPC communication is not encrypted&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:52.73695003Z&rdquo;}
+mainflux-http   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;HTTP adapter service started on port 8185&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:52.748463145Z&rdquo;}
+mainflux-http   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;gRPC communication is not encrypted&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:55.515667114Z&rdquo;}
+mainflux-http   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;HTTP adapter service started on port 8185&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:55.519133562Z&rdquo;}
+mainflux-coap   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;gRPC communication is not encrypted&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:53.7389281Z&rdquo;}
+mainflux-coap   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;CoAP adapter service started, exposed port 5683&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:53.749800784Z&rdquo;}
+mainflux-coap   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;CoAP service started, exposed port 5683&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-17T14:22:53.74977476Z&rdquo;}
+mainflux-coap   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;gRPC communication is not encrypted&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:54.325773167Z&rdquo;}
+mainflux-coap   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;CoAP service started, exposed port 5683&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:54.335582739Z&rdquo;}
+mainflux-coap   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;CoAP adapter service started, exposed port 5683&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T06:07:54.33578897Z&rdquo;}
+mainflux-mqtt   | D0817 14:22:52.050663105       1 env_linux.cc:71]            Warning: insecure environment read function &lsquo;getenv&rsquo; used
+mainflux-mqtt   | {&ldquo;level&rdquo;:30,&ldquo;time&rdquo;:1566051772452,&ldquo;msg&rdquo;:&ldquo;listening&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;address&rdquo;:&rdquo;::&ldquo;,&ldquo;family&rdquo;:&ldquo;IPv6&rdquo;,&ldquo;port&rdquo;:1883,&ldquo;protocol&rdquo;:&ldquo;tcp&rdquo;,&ldquo;v&rdquo;:1}
+mainflux-mqtt   | {&ldquo;level&rdquo;:30,&ldquo;time&rdquo;:1566051772453,&ldquo;msg&rdquo;:&ldquo;listening&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;address&rdquo;:&rdquo;::&ldquo;,&ldquo;family&rdquo;:&ldquo;IPv6&rdquo;,&ldquo;port&rdquo;:8880,&ldquo;protocol&rdquo;:&ldquo;http&rdquo;,&ldquo;v&rdquo;:1}
+mainflux-mqtt   | node_redis: Warning: Redis server does not require a password, but a password was supplied.
+mainflux-mqtt   | [WARN] Redis server does not require a password, but a password was supplied.
+mainflux-mqtt   | [WARN] Redis server does not require a password, but a password was supplied.
+mainflux-mqtt   | [WARN] Redis server does not require a password, but a password was supplied.
+mainflux-mqtt   | {&ldquo;name&rdquo;:&ldquo;mqtt&rdquo;,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;level&rdquo;:40,&ldquo;msg&rdquo;:&ldquo;error on redis connection: Redis connection to es-redis:6379 failed - connect ECONNREFUSED 172.18.0.3:6379&rdquo;,&ldquo;time&rdquo;:&ldquo;2019-08-18T06:06:57.912Z&rdquo;,&ldquo;v&rdquo;:0}
+mainflux-mqtt   | {&ldquo;name&rdquo;:&ldquo;mqtt&rdquo;,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;level&rdquo;:40,&ldquo;msg&rdquo;:&ldquo;error on redis connection: Redis connection to es-redis:6379 failed - connect ECONNREFUSED 172.18.0.3:6379&rdquo;,&ldquo;time&rdquo;:&ldquo;2019-08-18T06:06:58.259Z&rdquo;,&ldquo;v&rdquo;:0}
+mainflux-mqtt   | {&ldquo;name&rdquo;:&ldquo;mqtt&rdquo;,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;level&rdquo;:40,&ldquo;msg&rdquo;:&ldquo;error on redis connection: Redis connection to es-redis:6379 failed - getaddrinfo ENOTFOUND es-redis es-redis:6379&rdquo;,&ldquo;time&rdquo;:&ldquo;2019-08-18T06:06:58.887Z&rdquo;,&ldquo;v&rdquo;:0}
+mainflux-mqtt   | {&ldquo;name&rdquo;:&ldquo;mqtt&rdquo;,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;level&rdquo;:40,&ldquo;msg&rdquo;:&ldquo;error on redis connection: Redis connection to es-redis:6379 failed - getaddrinfo ENOTFOUND es-redis es-redis:6379&rdquo;,&ldquo;time&rdquo;:&ldquo;2019-08-18T06:06:59.904Z&rdquo;,&ldquo;v&rdquo;:0}
+mainflux-mqtt   | {&ldquo;name&rdquo;:&ldquo;mqtt&rdquo;,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;level&rdquo;:40,&ldquo;msg&rdquo;:&ldquo;error on redis connection: Redis connection to es-redis:6379 failed - getaddrinfo ENOTFOUND es-redis es-redis:6379&rdquo;,&ldquo;time&rdquo;:&ldquo;2019-08-18T06:07:01.585Z&rdquo;,&ldquo;v&rdquo;:0}
+mainflux-mqtt   | {&ldquo;name&rdquo;:&ldquo;mqtt&rdquo;,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;level&rdquo;:40,&ldquo;msg&rdquo;:&ldquo;error on redis connection: Redis connection to es-redis:6379 failed - getaddrinfo ENOTFOUND es-redis es-redis:6379&rdquo;,&ldquo;time&rdquo;:&ldquo;2019-08-18T06:07:04.444Z&rdquo;,&ldquo;v&rdquo;:0}
+mainflux-mqtt   | D0818 06:07:58.025853349       1 env_linux.cc:71]            Warning: insecure environment read function &lsquo;getenv&rsquo; used
+mainflux-mqtt   | {&ldquo;level&rdquo;:30,&ldquo;time&rdquo;:1566108478429,&ldquo;msg&rdquo;:&ldquo;listening&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;address&rdquo;:&rdquo;::&ldquo;,&ldquo;family&rdquo;:&ldquo;IPv6&rdquo;,&ldquo;port&rdquo;:1883,&ldquo;protocol&rdquo;:&ldquo;tcp&rdquo;,&ldquo;v&rdquo;:1}
+mainflux-mqtt   | {&ldquo;level&rdquo;:30,&ldquo;time&rdquo;:1566108478430,&ldquo;msg&rdquo;:&ldquo;listening&rdquo;,&ldquo;pid&rdquo;:1,&ldquo;hostname&rdquo;:&ldquo;941c67d26e08&rdquo;,&ldquo;address&rdquo;:&rdquo;::&ldquo;,&ldquo;family&rdquo;:&ldquo;IPv6&rdquo;,&ldquo;port&rdquo;:8880,&ldquo;protocol&rdquo;:&ldquo;http&rdquo;,&ldquo;v&rdquo;:1}
+mainflux-mqtt   | node_redis: Warning: Redis server does not require a password, but a password was supplied.
+mainflux-mqtt   | [WARN] Redis server does not require a password, but a password was supplied.
+mainflux-mqtt   | [WARN] Redis server does not require a password, but a password was supplied.
+mainflux-mqtt   | [WARN] Redis server does not require a password, but a password was supplied.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这样就算是正常启动了，但是启动过程中一些警告（主要是Redis的警告）和有一条日志INFO报告连接gRPC端口14250时失败，完整看完日志信息后，认为这些应该是正常的。
+
+现在再列举下容器列表：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ docker ps
+CONTAINER ID        IMAGE                           COMMAND                  CREATED             STATUS              PORTS                                                                                                                               NAMES
+26e7692f31b7        nginx:1.16.0-alpine             &ldquo;/entrypoint.sh&rdquo;         About an hour ago   Up 12 minutes       0.0.0.0:443-&gt;443/tcp, 0.0.0.0:8883-&gt;8883/tcp, 80/tcp, 0.0.0.0:8888-&gt;8888/tcp                                                        26e7692f31b7_mainflux-nginx
+4bb5cd9596ea        mainflux/ws:latest              &ldquo;/exe&rdquo;                   17 hours ago        Up 58 minutes       0.0.0.0:8186-&gt;8186/tcp                                                                                                              mainflux-ws
+8c0c4ccbbd55        mainflux/coap:latest            &ldquo;/exe&rdquo;                   17 hours ago        Up 58 minutes       0.0.0.0:5683-&gt;5683/udp                                                                                                              mainflux-coap
+941c67d26e08        mainflux/mqtt:latest            &ldquo;node mqtt.js&rdquo;           17 hours ago        Up 58 minutes       0.0.0.0:1883-&gt;1883/tcp, 0.0.0.0:8880-&gt;8880/tcp                                                                                      mainflux-mqtt
+51206daffd4f        mainflux/http:latest            &ldquo;/exe&rdquo;                   17 hours ago        Up 58 minutes       0.0.0.0:8185-&gt;8185/tcp                                                                                                              mainflux-http
+eb9bc8ac2e0a        mainflux/normalizer:latest      &ldquo;/exe&rdquo;                   17 hours ago        Up 58 minutes       0.0.0.0:8184-&gt;8184/tcp                                                                                                              mainflux-normalizer
+d1579ed65dff        mainflux/things:latest          &ldquo;/exe&rdquo;                   17 hours ago        Up 58 minutes       0.0.0.0:8182-8183-&gt;8182-8183/tcp, 0.0.0.0:8989-&gt;8989/tcp                                                                            mainflux-things
+fea1599f1faf        mainflux/users:latest           &ldquo;/exe&rdquo;                   17 hours ago        Up 58 minutes       0.0.0.0:8180-&gt;8180/tcp, 8181/tcp                                                                                                    mainflux-users
+d20f696b6a37        nats:1.3.0                      &ldquo;/gnatsd -c gnatsd.c…&rdquo;   17 hours ago        Up 58 minutes       4222/tcp, 6222/tcp, 8222/tcp                                                                                                        mainflux-nats
+08b0d3a188f9        postgres:10.8-alpine            &ldquo;docker-entrypoint.s…&rdquo;   17 hours ago        Up 58 minutes       5432/tcp                                                                                                                            mainflux-users-db
+310c048cb4f3        jaegertracing/all-in-one:1.13   &ldquo;/go/bin/all-in-one-…&rdquo;   17 hours ago        Up 58 minutes       5775/udp, 0.0.0.0:5778-&gt;5778/tcp, 0.0.0.0:14268-&gt;14268/tcp, 6832/udp, 0.0.0.0:16686-&gt;16686/tcp, 0.0.0.0:6831-&gt;6831/udp, 14250/tcp   mainflux-jaeger
+d84ae3be3425        redis:5.0-alpine                &ldquo;docker-entrypoint.s…&rdquo;   17 hours ago        Up 58 minutes       6379/tcp                                                                                                                            mainflux-es-redis
+aef24619a59a        redis:5.0-alpine                &ldquo;docker-entrypoint.s…&rdquo;   17 hours ago        Up 58 minutes       6379/tcp                                                                                                                            mainflux-things-redis
+3afec1d3a3e0        postgres:10.8-alpine            &ldquo;docker-entrypoint.s…&rdquo;   17 hours ago        Up 58 minutes       5432/tcp                                                                                                                            mainflux-things-db
+6f05dbae388f        redis:5.0-alpine                &ldquo;docker-entrypoint.s…&rdquo;   17 hours ago        Up 58 minutes       6379/tcp                                                                                                                            mainflux-mqtt-redis
+0f9972dc12c5        mainflux/ui:latest              &ldquo;/entrypoint.sh&rdquo;         17 hours ago        Up 58 minutes       80/tcp, 0.0.0.0:3000-&gt;3000/tcp                                                                                                      mainflux-ui</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">我们已经启动了mainflux-ui，那么就可以在浏览器查看下我们的mainflux-ui了，浏览器输入127.0.0.1:3000，得到如下结果：
+
+&lt;!--![mainflux-ui-01](/images/mainflux-ui-01.png)--&gt;
+![mainflux-ui-01](/static/images/mainflux-ui-01.png)
+
+### 12.2 安装mainflux-cli
+
+上一节中启动了mainflux的所有docker微服务，接下来要安装mainflux客户端来进行一些操作了。
+
+mainflux-cli应当从github页面&lt;https://github.com/mainflux/mainflux/releases&gt;下载最新发行版，并将之解压后放到本机`$GOBIN`目录下。这就完成了安装。
+
+但是我在前边手动编译的环节其实已经完成了mainflux-cli安装，所以这一步跳过。
+
+### 12.3 系统测试准备
+
+在系统测试之前，应执行：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-cli provision test
+```</p>
+
+<p>这一步会生成一个临时测试用户<code>user</code>，并登陆，然后创建属于其的两个<code>thing</code>和两个<code>channel</code>。这将用作测试场景。关于系统准备<code>system provision</code>的更多内容参考：<a href="https://mainflux.readthedocs.io/en/latest/provisioning/">https://mainflux.readthedocs.io/en/latest/provisioning/</a></p>
 
     </div>
 
