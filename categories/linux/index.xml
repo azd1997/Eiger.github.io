@@ -26,7 +26,7 @@
       <pubDate>Sat, 17 Aug 2019 04:44:28 +0800</pubDate>
       
       <guid>https://azd1997.github.io/post/linux/git/</guid>
-      <description>git学习全系列</description>
+      <description>git学习全系列 1. 修改commit消息 https://www.cnblogs.com/revel171226/p/9208589.html 2. Pull&amp;amp;Request https://blog.csdn.net/qq_33429968/article/details/62219783 3. 合并多条commit消息 https://blog.csdn.net/u013276277/article/details/82470177 4. 删除仓库下所有文件但不删除仓库 https://www.cnblogs.com/Ghost4C-QH/p/8777744.html 5. 与远程仓库建立连接 5.1 建立关联 1</description>
     </item>
     
     <item>

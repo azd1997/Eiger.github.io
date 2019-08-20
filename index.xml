@@ -26,7 +26,7 @@
       <pubDate>Sat, 17 Aug 2019 04:44:28 +0800</pubDate>
       
       <guid>https://azd1997.github.io/post/linux/git/</guid>
-      <description>git学习全系列</description>
+      <description>git学习全系列 1. 修改commit消息 https://www.cnblogs.com/revel171226/p/9208589.html 2. Pull&amp;amp;Request https://blog.csdn.net/qq_33429968/article/details/62219783 3. 合并多条commit消息 https://blog.csdn.net/u013276277/article/details/82470177 4. 删除仓库下所有文件但不删除仓库 https://www.cnblogs.com/Ghost4C-QH/p/8777744.html 5. 与远程仓库建立连接 5.1 建立关联 1</description>
     </item>
     
     <item>
@@ -75,42 +75,6 @@
     </item>
     
     <item>
-      <title>将本地仓库与远程仓库建立关联</title>
-      <link>https://azd1997.github.io/post/git/05_linkremoterepo/</link>
-      <pubDate>Tue, 23 Jul 2019 19:48:14 +0800</pubDate>
-      
-      <guid>https://azd1997.github.io/post/git/05_linkremoterepo/</guid>
-      <description>1.建立关联 1 2 3 4 5 6 7 8 9 10 # 建立本地Git仓库 $ git init # 与远程主机origin（默认主机名）的仓库建立关联 $ git remote add origin git@github.com:azd1997/EChain.git # 拉取远程仓库状态</description>
-    </item>
-    
-    <item>
-      <title>Git修改commit消息</title>
-      <link>https://azd1997.github.io/post/git/01_rebasecommitmessage/</link>
-      <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
-      
-      <guid>https://azd1997.github.io/post/git/01_rebasecommitmessage/</guid>
-      <description>https://www.cnblogs.com/revel171226/p/9208589.html</description>
-    </item>
-    
-    <item>
-      <title>Git合并commit记录</title>
-      <link>https://azd1997.github.io/post/git/03_mergecommitstoone/</link>
-      <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
-      
-      <guid>https://azd1997.github.io/post/git/03_mergecommitstoone/</guid>
-      <description>https://blog.csdn.net/u013276277/article/details/82470177</description>
-    </item>
-    
-    <item>
-      <title>Git提交Pull&amp;Request</title>
-      <link>https://azd1997.github.io/post/git/02_pullrequest/</link>
-      <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
-      
-      <guid>https://azd1997.github.io/post/git/02_pullrequest/</guid>
-      <description>https://blog.csdn.net/qq_33429968/article/details/62219783</description>
-    </item>
-    
-    <item>
       <title>Go语言协程池</title>
       <link>https://azd1997.github.io/post/go/01_goroutinepool/</link>
       <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
@@ -121,10 +85,10 @@
     
     <item>
       <title>Iro——树莓派安装魔镜、语音助手、智能家居全系列</title>
-      <link>https://azd1997.github.io/post/iro/01_connectyourraspi/</link>
+      <link>https://azd1997.github.io/post/linux/iro-raspi/</link>
       <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
       
-      <guid>https://azd1997.github.io/post/iro/01_connectyourraspi/</guid>
+      <guid>https://azd1997.github.io/post/linux/iro-raspi/</guid>
       <description>Iro——树莓派安装魔镜、语音助手、智能家居全系列 1. 树莓派安装系统及SSH连接 1.1 安装系统 ​进入树莓派官网下载树莓派带桌面版本系统镜像，使用W</description>
     </item>
     
@@ -138,48 +102,12 @@
     </item>
     
     <item>
-      <title>初次使用树莓派需要做的配置</title>
-      <link>https://azd1997.github.io/post/iro/02_configraspifirst/</link>
-      <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
-      
-      <guid>https://azd1997.github.io/post/iro/02_configraspifirst/</guid>
-      <description>1.修改用户密码及用户切换 2.系统设置 $ sudo raspi-config进入系统设置界面如下： 最主要的目的是扩展系统分区至整张SD卡。（Expan</description>
-    </item>
-    
-    <item>
-      <title>删除Github仓库下所有文件但不删除仓库</title>
-      <link>https://azd1997.github.io/post/git/04_deleteallfilesnotrepo/</link>
-      <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
-      
-      <guid>https://azd1997.github.io/post/git/04_deleteallfilesnotrepo/</guid>
-      <description>https://www.cnblogs.com/Ghost4C-QH/p/8777744.html</description>
-    </item>
-    
-    <item>
       <title>单元测试</title>
       <link>https://azd1997.github.io/post/go/03_testing/</link>
       <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
       
       <guid>https://azd1997.github.io/post/go/03_testing/</guid>
       <description>1.测试介绍 ​ 尽量测试，避免调试 2. 例子 ​ 这里使用一道算法题作为调试和测试的例子： ​ 求取字符串中最长的含有不重复字符的子字符串的长度。 2.1 开始之</description>
-    </item>
-    
-    <item>
-      <title>安装MagicMirror2</title>
-      <link>https://azd1997.github.io/post/iro/03_installmagicmirror/</link>
-      <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
-      
-      <guid>https://azd1997.github.io/post/iro/03_installmagicmirror/</guid>
-      <description>1. 魔镜看法 ​ 魔镜的本质只是一个全屏的WEB网页，而魔镜项目做成了Node.js的一个模块。因此安装魔镜实际上是安装Node.js并在其上安装</description>
-    </item>
-    
-    <item>
-      <title>安装Wukong语音助手</title>
-      <link>https://azd1997.github.io/post/iro/04_installwukongrobot/</link>
-      <pubDate>Tue, 23 Jul 2019 10:37:14 +0800</pubDate>
-      
-      <guid>https://azd1997.github.io/post/iro/04_installwukongrobot/</guid>
-      <description>https://wukong.hahack.com/#/install //TODO:更新唤醒词</description>
     </item>
     
     <item>
