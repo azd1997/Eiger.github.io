@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-08-17T02:47:50&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-17T02:47:50&#43;08:00" />
-<meta itemprop="wordCount" content="31552">
+<meta itemprop="wordCount" content="41533">
 
 
 
@@ -135,8 +135,8 @@
         <div class="post-category">
             <a href="/categories/iot/"> iot </a>
             </div>
-          <span class="more-meta"> 31552 words </span>
-          <span class="more-meta"> 63 mins read </span>
+          <span class="more-meta"> 41533 words </span>
+          <span class="more-meta"> 83 mins read </span>
         
       </div>
     </header>
@@ -223,7 +223,30 @@
 <li><a href="#postgres-writer">Postgres Writer</a></li>
 <li><a href="#postgres-reader">Postgres Reader</a></li>
 </ul></li>
-<li><a href="#nginx-1">NGINX</a></li>
+<li><a href="#nginx-1">NGINX</a>
+<ul>
+<li>
+<ul>
+<li><a href="#13-4-2-reader">13.4.2 Reader</a></li>
+</ul></li>
+<li><a href="#13-5-lora">13.5 LoRa</a></li>
+<li><a href="#13-6-安全通信">13.6 安全通信</a>
+<ul>
+<li><a href="#13-6-1-安全的postgresql连接">13.6.1 安全的PostgreSQL连接</a></li>
+<li><a href="#13-6-2-安全的grpc">13.6.2 安全的gRPC</a></li>
+</ul></li>
+<li><a href="#13-7-authentication-认证">13.7 Authentication（认证）</a>
+<ul>
+<li><a href="#13-7-1-使用mainflux秘钥认证">13.7.1 使用Mainflux秘钥认证</a></li>
+<li><a href="#13-7-2-使用x-509证书进行相互tls认证">13.7.2 使用X.509证书进行相互TLS认证</a></li>
+</ul></li>
+<li><a href="#13-8-cli">13.8 CLI</a></li>
+<li><a href="#13-9-bootstrap-引导">13.9 Bootstrap（引导）</a></li>
+</ul></li>
+<li><a href="#14-mainflux应用">14. mainflux应用</a>
+<ul>
+<li><a href="#14-1-连接一个mqtt设备">14.1 连接一个mqtt设备</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -269,7 +292,47 @@
 <li><a href="#12-getting-started">12. Getting started</a></li>
 <li><a href="#121-%e8%bf%90%e8%a1%8c%e6%95%b4%e4%b8%aa%e7%b3%bb%e7%bb%9f">12.1 运行整个系统</a></li>
 <li><a href="#122-%e5%ae%89%e8%a3%85mainflux-cli">12.2 安装mainflux-cli</a></li>
-<li><a href="#123-%e7%b3%bb%e7%bb%9f%e6%b5%8b%e8%af%95%e5%87%86%e5%a4%87">12.3 系统测试准备</a></li>
+<li><a href="#123-%e7%b3%bb%e7%bb%9f%e6%b5%8b%e8%af%95%e9%85%8d%e7%bd%aeprovisioning">12.3 系统测试配置（Provisioning）</a></li>
+<li><a href="#124-%e5%8f%91%e9%80%81%e6%b6%88%e6%81%af%e6%b5%8b%e8%af%95">12.4 发送消息测试</a></li>
+<li><a href="#13-mainflux%e6%9e%b6%e6%9e%84%e6%a6%82%e5%bf%b5">13. mainflux架构、概念</a></li>
+<li><a href="#131-%e6%9e%b6%e6%9e%84">13.1 架构</a></li>
+<li><a href="#132-provisioning">13.2 Provisioning</a>
+
+<ul>
+<li><a href="#1321-%e7%94%a8%e6%88%b7%e7%ae%a1%e7%90%86">13.2.1 用户管理</a></li>
+<li><a href="#1322-%e7%b3%bb%e7%bb%9f%e9%85%8d%e7%bd%aeprovision">13.2.2 系统配置（provision）</a></li>
+<li><a href="#1323-%e8%ae%bf%e9%97%ae%e6%8e%a7%e5%88%b6">13.2.3 访问控制</a></li>
+</ul></li>
+<li><a href="#133-messaging">13.3 Messaging</a>
+
+<ul>
+<li><a href="#1331-http">13.3.1 http</a></li>
+<li><a href="#1332-mqtt">13.3.2 MQTT</a></li>
+</ul></li>
+<li><a href="#134-storage">13.4 Storage</a>
+
+<ul>
+<li><a href="#1341-writers">13.4.1 Writers</a></li>
+<li><a href="#1342-readers">13.4.2 Readers</a></li>
+<li><a href="#1342-reader">13.4.2 Reader</a></li>
+</ul></li>
+<li><a href="#135-lora">13.5 LoRa</a></li>
+<li><a href="#136-%e5%ae%89%e5%85%a8%e9%80%9a%e4%bf%a1">13.6 安全通信</a>
+
+<ul>
+<li><a href="#1361-%e5%ae%89%e5%85%a8%e7%9a%84postgresql%e8%bf%9e%e6%8e%a5">13.6.1 安全的PostgreSQL连接</a></li>
+<li><a href="#1362-%e5%ae%89%e5%85%a8%e7%9a%84grpc">13.6.2 安全的gRPC</a></li>
+</ul></li>
+<li><a href="#137-authentication%e8%ae%a4%e8%af%81">13.7 Authentication（认证）</a>
+
+<ul>
+<li><a href="#1371-%e4%bd%bf%e7%94%a8mainflux%e7%a7%98%e9%92%a5%e8%ae%a4%e8%af%81">13.7.1 使用Mainflux秘钥认证</a></li>
+<li><a href="#1372-%e4%bd%bf%e7%94%a8x509%e8%af%81%e4%b9%a6%e8%bf%9b%e8%a1%8c%e7%9b%b8%e4%ba%92tls%e8%ae%a4%e8%af%81">13.7.2 使用X.509证书进行相互TLS认证</a></li>
+</ul></li>
+<li><a href="#138-cli">13.8 CLI</a></li>
+<li><a href="#139-bootstrap%e5%bc%95%e5%af%bc">13.9 Bootstrap（引导）</a></li>
+<li><a href="#14-mainflux%e5%ba%94%e7%94%a8">14. mainflux应用</a></li>
+<li><a href="#141-%e8%bf%9e%e6%8e%a5%e4%b8%80%e4%b8%aamqtt%e8%ae%be%e5%a4%87">14.1 连接一个mqtt设备</a></li>
 </ul></li>
 </ul>
 
@@ -5001,7 +5064,7 @@ eiger@eiger-ThinkPad-X1-Carbon-3rd:~$</p>
 &lt;!--博客生成时使用/images开头，编辑器中使用/static开头--&gt;
 &lt;!--![mainflux-architecture](/images/mainflux-architecture.jpg)--&gt;
 
-![mainflux-architecture](/static/images/mainflux-architecture.jpg)
+![mainflux-architecture](../../../static/images/mainflux-architecture.jpg)
 
 nginx被用来做负载均衡，但是mainflux-ui也用到了nginx，但它只是用nginx做一个简单的服务器，另外我们去查看docker-compose.yml也可以看到services下nginx的environment项是MF_UI_PORT，这进一步佐证了mainflux-ui使用nginx作web服务器。
 
@@ -5609,7 +5672,7 @@ aef24619a59a        redis:5.0-alpine                &ldquo;docker-entrypoint.s�
 <pre class="chroma">我们已经启动了mainflux-ui，那么就可以在浏览器查看下我们的mainflux-ui了，浏览器输入127.0.0.1:3000，得到如下结果：
 
 &lt;!--![mainflux-ui-01](/images/mainflux-ui-01.png)--&gt;
-![mainflux-ui-01](/static/images/mainflux-ui-01.png)
+![mainflux-ui-01](../../../static/images/mainflux-ui-01.png)
 
 ### 12.2 安装mainflux-cli
 
@@ -5619,16 +5682,1719 @@ mainflux-cli应当从github页面&lt;https://github.com/mainflux/mainflux/releas
 
 但是我在前边手动编译的环节其实已经完成了mainflux-cli安装，所以这一步跳过。
 
-### 12.3 系统测试准备
+### 12.3 系统测试配置（Provisioning）
 
 在系统测试之前，应执行：</pre></td></tr></table>
 </div>
 </div>
 <p>shell
-mainflux-cli provision test
+mainflux-cli provision test</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这一步会生成一个临时测试用户`user`，并登陆，然后创建属于其的两个`thing`和两个`channel`。这将用作测试场景。关于系统准备`system provision`的更多内容参考：&lt;https://mainflux.readthedocs.io/en/latest/provisioning/&gt;
+
+但是现在无论是在哪里执行`mainflux-cli provision test`都会报错：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ mainflux-cli provision test</p>
+
+<p>failed to create entity</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">好了，现在让我们来看下mainflux-cli部分源码吧。
+
+mainflux-cli主要包括`mainflux/cmd/cli/main.go`入口文件和`mainflux/cli/`下所有文件，我们现在主要关心`provision`命令，所以我们主要查看`mainflux/cli/provision.go`文件，在其中我们找到provision的test子命令所在：</pre></td></tr></table>
+</div>
+</div>
+<p>go
+cobra.Command{
+    Use:   &ldquo;test&rdquo;,
+    Short: &ldquo;test&rdquo;,
+    Long: <code>Provisions test setup: one test user, two things and two channels. \
+            Connect both things to one of the channels, \
+            and only on thing to other channel.</code>,
+    Run: func(cmd *cobra.Command, args []string) {
+        numThings := 2
+        numChan := 2
+        things := []mfxsdk.Thing{}
+        channels := []mfxsdk.Channel{}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">    if len(args) != 0 {
+    logUsage(cmd.Short)
+    return
+    }
+
+    un := fmt.Sprintf(&#34;%s@email.com&#34;, namesgenerator.GetRandomName(0))
+    // Create test user
+    user := mfxsdk.User{
+        Email:    un,
+        Password: &#34;123&#34;,
+    }
+    if err := sdk.CreateUser(user); err != nil {
+        logError(err)
+        return
+    }
+
+    ut, err := sdk.CreateToken(user)
+    if err != nil {
+        logError(err)
+        return
+    }
+
+    // Create things
+    for i := 0; i &lt; numThings; i++ {
+        n := fmt.Sprintf(&#34;d%d&#34;, i)
+
+        m, err := createThing(n, ut)
+        if err != nil {
+            logError(err)
+            return
+        }
+
+        things = append(things, m)
+    }
+    // Create channels
+    for i := 0; i &lt; numChan; i++ {
+        n := fmt.Sprintf(&#34;c%d&#34;, i)
+        c, err := createChannel(n, ut)
+        if err != nil {
+            logError(err)
+            return
+        }
+
+        channels = append(channels, c)
+    }
+
+    // Connect things to channels - first thing to both channels, second only to first
+    for i := 0; i &lt; numThings; i++ {
+        if err := sdk.ConnectThing(things[i].ID, channels[i].ID, ut); err != nil {
+            logError(err)
+            return
+        }
+
+        if i%2 == 0 {
+            if i+1 &gt;= len(channels) {
+                break
+            }
+            if err := sdk.ConnectThing(things[i].ID, channels[i+1].ID, ut); err != nil {
+                logError(err)
+                return
+            }
+        }
+    }
+
+    logJSON(user, ut, things, channels)
+},</pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">我在输入`mainflux-cli provision test`时报了无法创建实体的错，那么按照子命令中运行流程来看第一个可能出错的位置在于“Create test user”一段，那么我们进而去查看`sdk.CreateUser`方法的定义，在mainflux/sdk/go/sdk.go中我们看到SDK接口中定义了该方法，进而在mainflux/sdk/go/users.go中看到该方法的实现：</pre></td></tr></table>
+</div>
+</div>
+<p>go
+func (sdk mfSDK) CreateUser(user User) error {
+    data, err := json.Marshal(user)
+    if err != nil {
+        return ErrInvalidArgs
+    }</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">url := createURL(sdk.baseURL, sdk.usersPrefix, &#34;users&#34;)
+
+resp, err := sdk.client.Post(url, string(CTJSON), bytes.NewReader(data))
+if err != nil {
+    return err
+}
+
+if resp.StatusCode != http.StatusCreated {
+    switch resp.StatusCode {
+    case http.StatusBadRequest:
+        return ErrInvalidArgs
+    case http.StatusConflict:
+        return ErrConflict
+    default:
+        return ErrFailedCreation
+    }
+}
+
+return nil</pre></td></tr></table>
+</div>
+</div>
+<p>}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这里的`ErrFailedCreation`看上去可能会是我们碰到的“无法创建实体”错误，我们查看下其定义：</pre></td></tr></table>
+</div>
+</div>
+<p>go
+// mainflux/sdk/go/sdk.go
+var (
+    // ErrFailedCreation indicates that entity creation failed.
+    ErrFailedCreation = errors.New(&ldquo;failed to create entity&rdquo;)
+)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">果然是这个错误！那么说明我们在执行`mainflux-cli provision test`时出错片段在：</pre></td></tr></table>
+</div>
+</div>
+<p>go
+if resp.StatusCode != http.StatusCreated {
+    switch resp.StatusCode {
+    case http.StatusBadRequest:
+        return ErrInvalidArgs
+    case http.StatusConflict:
+        return ErrConflict
+    default:
+        return ErrFailedCreation
+    }
+}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这说明`CreateUser`方法在向服务发起请求后得到的回应是有问题的，而且不是网络状态问题，也不是无效参数问题。所以我们得检查下user服务。
+
+在进一步源码阅读之前，我们先再阅读下官方文档`provisioning`章节，在&lt;https://mainflux.readthedocs.io/en/latest/provisioning/#users-management&gt;中直接使用给出的请求命令，得到的结果是：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ curl -s -S -i &ndash;cacert docker/ssl/certs/mainflux-server.crt &ndash;insecure -X POST -H &ldquo;Content-Type: application/json&rdquo; <a href="https://localhost/users">https://localhost/users</a> -d &lsquo;{&ldquo;email&rdquo;:&ldquo;john.doe@email.com&rdquo;, &ldquo;password&rdquo;:&ldquo;123&rdquo;}&rsquo;
+HTTP/2 201
+server: nginx/1.16.0
+date: Sun, 18 Aug 2019 08:31:37 GMT
+content-type: application/json
+content-length: 0
+strict-transport-security: max-age=63072000; includeSubdomains
+x-frame-options: DENY
+x-content-type-options: nosniff
+access-control-allow-origin: *
+access-control-allow-methods: *
+access-control-allow-headers: *</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">连接被拒绝了，而且在该节还有个小提示：`Note that when using official docker-compose, all services are behind nginx proxy and all traffic is TLS encrypted.`，而我们启动正是以docker-compose方式启动，所以我们前面`test`失败也很可能是因为客户端是遵循非安全连接而服务端只接受安全连接导致连接请求被拒绝！
+
+下面是几次尝试：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ curl -s -S -i &ndash;cacert docker/ssl/certs/mainflux-server.crt &ndash;insecure -X POST -H &ldquo;Content-Type: application/json&rdquo; <a href="https://localhost/users">https://localhost/users</a> -d &lsquo;{&ldquo;email&rdquo;:&ldquo;john.doe@email.com&rdquo;, &ldquo;password&rdquo;:&ldquo;123&rdquo;}&rsquo;
+HTTP/2 201
+server: nginx/1.16.0
+date: Sun, 18 Aug 2019 08:31:37 GMT
+content-type: application/json
+content-length: 0
+strict-transport-security: max-age=63072000; includeSubdomains
+x-frame-options: DENY
+x-content-type-options: nosniff
+access-control-allow-origin: *
+access-control-allow-methods: *
+access-control-allow-headers: *</p>
+
+<p>eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ curl -s -S -i &ndash;cacert docker/ssl/certs/mainflux-server.crt &ndash;secure -X POST -H &ldquo;Content-Type: application/json&rdquo; <a href="https://localhost/users">https://localhost/users</a> -d &lsquo;{&ldquo;email&rdquo;:&ldquo;john.doe@email.com&rdquo;, &ldquo;password&rdquo;:&ldquo;123&rdquo;}&rsquo;
+curl: option &ndash;secure: is unknown
+curl: try &lsquo;curl &ndash;help&rsquo; or &lsquo;curl &ndash;manual&rsquo; for more information
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ curl -s -S -i &ndash;cacert docker/ssl/certs/mainflux-server.crt -X POST -H &ldquo;Content-Type: application/json&rdquo; <a href="https://localhost/users">https://localhost/users</a> -d &lsquo;{&ldquo;email&rdquo;:&ldquo;john.doe@email.com&rdquo;, &ldquo;password&rdquo;:&ldquo;123&rdquo;}&rsquo;
+curl: (77) error setting certificate verify locations:
+  CAfile: docker/ssl/certs/mainflux-server.crt
+  CApath: /etc/ssl/certs
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~$ cd ~/gopath-default/src/github.com/mainflux/mainflux/
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ curl -s -S -i &ndash;cacert docker/ssl/certs/mainflux-server.crt -X POST -H &ldquo;Content-Type: application/json&rdquo; <a href="https://localhost/users">https://localhost/users</a> -d &lsquo;{&ldquo;email&rdquo;:&ldquo;john.doe@email.com&rdquo;, &ldquo;password&rdquo;:&ldquo;123&rdquo;}&rsquo;
+curl: (60) SSL certificate problem: unable to get local issuer certificate
+More details here: <a href="https://curl.haxx.se/docs/sslcerts.html">https://curl.haxx.se/docs/sslcerts.html</a></p>
+
+<p>curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it. To learn more about this situation and
+how to fix it, please visit the web page mentioned above.
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">尽管摸索出来需要在mainflux根目录运行，但仍然提示说验证失败无法建立安全连接`curl failed to verify the legitimacy of the server and therefore could not
+establish a secure connection to it.`
+
+现在的情况是nginx反向代理服务器需要安全连接，而我们不知道怎样建立安全连接。所以有两条路走：
+
+- 学习如何建立安全连接
+- 修改dockercompose.yml使nginx不要求安全连接，也就是不检查证书
+
+在mainflux根目录下输入发起注册用户请求：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ curl -s -S -i &ndash;cacert docker/ssl/certs/mainflux-server.crt &ndash;insecure -X POST -H &ldquo;Content-Type: application/json&rdquo; <a href="https://localhost/users">https://localhost/users</a> -d &lsquo;{&ldquo;email&rdquo;:&ldquo;374192922@email.com&rdquo;, &ldquo;password&rdquo;:&ldquo;123456&rdquo;}&rsquo;
+HTTP/2 201
+server: nginx/1.16.0
+date: Sun, 18 Aug 2019 09:12:35 GMT
+content-type: application/json
+content-length: 0
+strict-transport-security: max-age=63072000; includeSubdomains
+x-frame-options: DENY
+x-content-type-options: nosniff
+access-control-allow-origin: *
+access-control-allow-methods: *
+access-control-allow-headers: *</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这里返回结果我也不清楚是成功还是失败。
+
+同时在mainflux服务终端输出了相应信息：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method register for user 374192922@email.com took 90.009818ms to complete without errors.&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-18T09:12:35.369333654Z&rdquo;}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">好像又是注册成功了的意思？？根据官方文档&lt;https://mainflux.readthedocs.io/en/latest/getting-started/#step-3-provision-the-system&gt;处用户注册成功的案例描述，应该确实是注册成功了。
+
+那么也就是通过这样的方式确实能够注册用户。
+
+接下来我在mainflux-ui尝试登陆却出错了：
+
+&lt;!--![mainflux-ui-02](/images/mainflux-ui-02.png)--&gt;
+![mainflux-ui-02](../../../static/images/mainflux-ui-02.png)
+
+同时mainflux系统终端输出：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-ui     | 172.18.0.1 - - [18/Aug/2019:09:34:05 +0000] &ldquo;POST /tokens HTTP/1.1&rdquo; 405 575 &ldquo;<a href="http://127.0.0.1:3000/&quot;">http://127.0.0.1:3000/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo; &ldquo;-&rdquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">同样，给出了405的http状态码。
+
+----
+
+在多次尝试无果后，开始分析问题，问题出在cli和ui都无法正常和nginx进行通信，也就无法和nginx代理的诸多服务进行连接。而官方文档却并未多作说明，是不是因为我修改了nginx端口，而其他服务和nginx建立连接的地方在代码中写死了是80端口呢？
+
+尝试一下。
+
+将`.env`文件中nginx的http端口改回80，执行`make run`，果不其然提示nginx的80端口被占用。这回我们选择杀掉占用该端口的进程！</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ sudo netstat -lnp | grep 80
+[sudo] password for eiger:
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      1193/nginx: master
+tcp6       0      0 :::8880                 :::*                    LISTEN      19939/docker-proxy
+tcp6       0      0 :::80                   :::*                    LISTEN      1193/nginx: master
+tcp6       0      0 :::8180                 :::*                    LISTEN      19576/docker-proxy
+unix  2      [ ACC ]     SEQPACKET  LISTENING     13802    1/init               /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     27808    1596/Xorg            /tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     180757   8303/code            /run/user/1000/vscode-06f15111-1.37.0-main.sock
+unix  2      [ ACC ]     STREAM     LISTENING     27807    1596/Xorg            @/tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     184361   8973/code            /run/user/1000/vscode-git-askpass-830bbc748f92bec499b4d793b9a26bcc67f98049.sock
+unix  2      [ ACC ]     STREAM     LISTENING     238009   19584/containerd-sh  @/containerd-shim/moby/fea1599f1fafb50ec78e979f461f77bb99350205c33c622d1841938e586582ab/shim.sock@
+unix  2      [ ACC ]     STREAM     LISTENING     230354   18640/containerd-sh  @/conta
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ sudo kill -9 1193
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ sudo netstat -lnp | grep 80
+tcp6       0      0 :::8880                 :::*                    LISTEN      19939/docker-proxy
+tcp6       0      0 :::8180                 :::*                    LISTEN      19576/docker-proxy
+unix  2      [ ACC ]     SEQPACKET  LISTENING     13802    1/init               /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     27808    1596/Xorg            /tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     180757   8303/code            /run/user/1000/vscode-06f15111-1.37.0-main.sock
+unix  2      [ ACC ]     STREAM     LISTENING     27807    1596/Xorg            @/tmp/.X11-unix/X0
+unix  2      [ ACC ]     STREAM     LISTENING     184361   8973/code            /run/user/1000/vscode-git-askpass-830bbc748f92bec499b4d793b9a26bcc67f98049.sock
+unix  2      [ ACC ]     STREAM     LISTENING     238009   19584/containerd-sh  @/containerd-shim/moby/fea1599f1fafb50ec78e979f461f77bb99350205c33c622d1841938e586582ab/shim.sock@
+unix  2      [ ACC ]     STREAM     LISTENING     230354   18640/containerd-sh  @/containerd-shim/moby/aef24619a59af74650841b80deca2addcf0f325659ff88b46e7a415308615aee/shim.sock@</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">再执行`make run`这回全部服务就正常运行起来了。
+
+现在我们需要分别试试mainflux-ui和mainflux-cli。
+
+先试试mainflux-cli。</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ mainflux-cli version</p>
+
+<p>&ldquo;0.9.0&rdquo;</p>
+
+<p>eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ mainflux-cli provision test</p>
+
+<p>{
+  &ldquo;email&rdquo;: &ldquo;distracted_goldberg@email.com&rdquo;,
+  &ldquo;password&rdquo;: &ldquo;123&rdquo;
+}</p>
+
+<p>&ldquo;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYxNjkzNTMsImlhdCI6MTU2NjEzMzM1MywiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJkaXN0cmFjdGVkX2dvbGRiZXJnQGVtYWlsLmNvbSJ9.48juMD1G25swxXYHe_ydHAY5kUdOC76sF6TebxEIKw4&rdquo;</p>
+
+<p>[
+  {
+    &ldquo;id&rdquo;: &ldquo;472afd2e-eb93-4a35-a043-c766ae5bb340&rdquo;,
+    &ldquo;key&rdquo;: &ldquo;f586a9d6-65b2-402a-991f-df3f589dde03&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;d0&rdquo;
+  },
+  {
+    &ldquo;id&rdquo;: &ldquo;b0963af4-9c86-4b1b-b66e-83225c3a61dc&rdquo;,
+    &ldquo;key&rdquo;: &ldquo;4e7a2353-e190-474c-b870-09119540d07a&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;d1&rdquo;
+  }
+]</p>
+
+<p>[
+  {
+    &ldquo;id&rdquo;: &ldquo;56e9b2eb-1825-4405-9cfd-8f5da524bc5a&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;c0&rdquo;
+  },
+  {
+    &ldquo;id&rdquo;: &ldquo;ffd36101-2eca-4a1f-995e-40db52ae3546&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;c1&rdquo;
+  }
+]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">对应的mainflux系统输出：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:50 +0000] &ldquo;POST /users HTTP/1.1&rdquo; 201 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method register for user pensive_pike@email.com took 97.212206ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:50.946048858Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method login for user pensive_pike@email.com took 91.421359ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.039202211Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;POST /tokens HTTP/1.1&rdquo; 201 205 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 76.822µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.049014024Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;POST /things HTTP/1.1&rdquo; 201 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 111.644µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.08432965Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;GET /things/c7d43640-0dcd-4906-ac6b-6e402977a5ae HTTP/1.1&rdquo; 200 103 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 62.202µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.087101305Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method add_thing for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4 and thing c7d43640-0dcd-4906-ac6b-6e402977a5ae took 25.942086ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.082656145Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method view_thing for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4 and thing c7d43640-0dcd-4906-ac6b-6e402977a5ae took 1.893131ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.085790957Z&rdquo;}
+mainflux-es-redis | 1:M 19 Aug 2019 05:01:51.085 * 1 changes in 3600 seconds. Saving&hellip;
+mainflux-es-redis | 1:M 19 Aug 2019 05:01:51.085 * Background saving started by pid 13
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method add_thing for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4 and thing d3f98848-2c3f-4cb7-9b2d-83ee6cdcbd7b took 13.657223ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.100444341Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 63.645µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.103297048Z&rdquo;}
+mainflux-es-redis | 13:C 19 Aug 2019 05:01:51.102 * DB saved on disk
+mainflux-es-redis | 13:C 19 Aug 2019 05:01:51.102 * RDB: 0 MB of memory used by copy-on-write
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;POST /things HTTP/1.1&rdquo; 201 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method view_thing for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4 and thing d3f98848-2c3f-4cb7-9b2d-83ee6cdcbd7b took 1.537343ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.104173072Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;GET /things/d3f98848-2c3f-4cb7-9b2d-83ee6cdcbd7b HTTP/1.1&rdquo; 200 103 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 68.712µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.108924879Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method create_channel for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4 and channel  took 9.443113ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.118044827Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;POST /channels HTTP/1.1&rdquo; 201 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 137.705µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.119680765Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method create_channel for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4 and channel  took 2.605725ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.121788949Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;POST /channels HTTP/1.1&rdquo; 201 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 70.85µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.129063142Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method connect for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4, channel 3e307fb1-d41c-49d1-853f-bc48e0e2f734 and thing c7d43640-0dcd-4906-ac6b-6e402977a5ae took 15.118173ms to complete without errors.&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.13813717Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;PUT /channels/3e307fb1-d41c-49d1-853f-bc48e0e2f734/things/c7d43640-0dcd-4906-ac6b-6e402977a5ae HTTP/1.1&rdquo; 200 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 52.583µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.139484322Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method connect for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4, channel af1045ac-fdc1-4091-b0ba-234ebe5e167b and thing c7d43640-0dcd-4906-ac6b-6e402977a5ae took 2.796857ms to complete without errors.&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.141942135Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;PUT /channels/af1045ac-fdc1-4091-b0ba-234ebe5e167b/things/c7d43640-0dcd-4906-ac6b-6e402977a5ae HTTP/1.1&rdquo; 200 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client pensive_pike@email.com took 52.562µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.143426123Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method connect for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4, channel af1045ac-fdc1-4091-b0ba-234ebe5e167b and thing d3f98848-2c3f-4cb7-9b2d-83ee6cdcbd7b took 2.297169ms to complete without errors.&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T05:01:51.145410019Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:05:01:51 +0000] &ldquo;PUT /channels/af1045ac-fdc1-4091-b0ba-234ebe5e167b/things/d3f98848-2c3f-4cb7-9b2d-83ee6cdcbd7b HTTP/1.1&rdquo; 200 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-es-redis | 1:M 19 Aug 2019 05:01:51.185 * Background saving terminated with success</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">看上去成功了！
+
+接下来将test随即注册的账号在mainflux-ui界面登录试试：
+
+在127.0.0.1:3000页面下尝试登录前面随机生成的用户，依然返回405。
+
+是不是要使用docker的虚拟ip呢？docker的虚拟ip默认为172.17.0.1，但是我们还是来手动查看一下。执行`ifconfig`，可以看到这样一段：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ ifconfig
+br-1f6c96862db4: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.18.0.1  netmask 255.255.0.0  broadcast 172.18.255.255
+        inet6 fe80::42:aff:fe58:4f6  prefixlen 64  scopeid 0x20<link>
+        ether 02:42:0a:58:04:f6  txqueuelen 0  (Ethernet)
+        RX packets 1103  bytes 56812 (56.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1312  bytes 153384 (153.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</p>
+
+<p>docker0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
+        inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
+        ether 02:42:e5:24:90:7c  txqueuelen 0  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">说明docker ip确实是172.17.0.1。现在我们试试浏览器访问172.17.0.1:3000：
+
+&lt;!--![mainflux-ui-03](/images/mainflux-ui-03.png)--&gt;
+![mainflux-ui-03](../../../static/images/mainflux-ui-03.png)
+
+这时mainflux系统输出为：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-ui     | 172.18.0.1 - - [19/Aug/2019:05:21:10 +0000] &ldquo;GET / HTTP/1.1&rdquo; 304 0 &ldquo;-&rdquo; &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo; &ldquo;-&rdquo;
+mainflux-ui     | 172.18.0.1 - - [19/Aug/2019:05:21:10 +0000] &ldquo;GET /css/mainflux.css HTTP/1.1&rdquo; 304 0 &ldquo;<a href="http://172.17.0.1:3000/&quot;">http://172.17.0.1:3000/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo; &ldquo;-&rdquo;
+mainflux-ui     | 172.18.0.1 - - [19/Aug/2019:05:21:10 +0000] &ldquo;GET /main.js HTTP/1.1&rdquo; 304 0 &ldquo;<a href="http://172.17.0.1:3000/&quot;">http://172.17.0.1:3000/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo; &ldquo;-&rdquo;
+mainflux-ui     | 172.18.0.1 - - [19/Aug/2019:05:21:10 +0000] &ldquo;GET /src/Websocket.js HTTP/1.1&rdquo; 304 0 &ldquo;<a href="http://172.17.0.1:3000/&quot;">http://172.17.0.1:3000/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo; &ldquo;-&rdquo;
+mainflux-ui     | 172.18.0.1 - - [19/Aug/2019:05:21:12 +0000] &ldquo;GET /favicon.ico HTTP/1.1&rdquo; 304 0 &ldquo;<a href="http://172.17.0.1:3000/&quot;">http://172.17.0.1:3000/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo; &ldquo;-&rdquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这时注意到终端其实输出的ip为172.18.0.1，那么浏览器输入172.18.0.1:3000试试？
+
+&lt;!--![mainflux-ui-04](/images/mainflux-ui-04.png)--&gt;
+![mainflux-ui-04](../../../static/images/mainflux-ui-04.png)
+
+也能行！
+
+现在我们来试试在两个网址中与mainflux后端系统进行交互看是否能成功。我们准备了两个生成的用户（通过`mainflux-cli provision test`生成）：</pre></td></tr></table>
+</div>
+</div>
+<p>json
+{
+  &ldquo;email&rdquo;: &ldquo;distracted_goldberg@email.com&rdquo;,
+  &ldquo;password&rdquo;: &ldquo;123&rdquo;
+}
+{
+  &ldquo;email&rdquo;: &ldquo;pensive_pike@email.com&rdquo;,
+  &ldquo;password&rdquo;: &ldquo;123&rdquo;
+}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">经过测试，浏览器输入以下链接均可进入mainflux-ui登录界面：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+127.0.0.1
+127.0.0.1:3000
+172.17.0.1
+172.17.0.1:3000
+172.18.0.1
+172.18.0.1:3000</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">但是只有输入</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+127.0.0.1
+172.17.0.1
+172.18.0.1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">后的界面能正常登录。
+
+其实从终端日志显示的`172.18.0.1`来看，应该是nginx里写好了解析规则，输入`127.0.0.1`或者`172.17.0.1`都会被解析到`172.18.0.1`。
+
+这里放一下`172.18.0.1`的登陆成功页面：
+
+&lt;!--![mainflux-ui-06](/images/mainflux-ui-06.png)--&gt;
+![mainflux-ui-06](../../../static/images/mainflux-ui-06.png)</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method login for user distracted_goldberg@email.com took 92.773994ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T06:02:53.426102548Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:06:02:53 +0000] &ldquo;POST /tokens HTTP/1.1&rdquo; 201 214 &ldquo;<a href="http://172.18.0.1/&quot;">http://172.18.0.1/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo;
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:06:02:53 +0000] &ldquo;GET /version HTTP/1.1&rdquo; 200 38 &ldquo;<a href="http://172.18.0.1/&quot;">http://172.18.0.1/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo;
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client distracted_goldberg@email.com took 84.523µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T06:02:53.433221746Z&rdquo;}
+mainflux-users  | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method identity for client distracted_goldberg@email.com took 70.071µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T06:02:53.434277438Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method list_channels for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMzA1NzMsImlhdCI6MTU2NjE5NDU3MywiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJkaXN0cmFjdGVkX2dvbGRiZXJnQGVtYWlsLmNvbSJ9.lFhy2KPWE4jIkWvMMUxhDAsCqG-_cgHdqiI1e2vjj10 took 2.78473ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T06:02:53.435522551Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method list_things for token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMzA1NzMsImlhdCI6MTU2NjE5NDU3MywiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJkaXN0cmFjdGVkX2dvbGRiZXJnQGVtYWlsLmNvbSJ9.lFhy2KPWE4jIkWvMMUxhDAsCqG-_cgHdqiI1e2vjj10 took 2.266344ms to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T06:02:53.436236164Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:06:02:53 +0000] &ldquo;GET /channels?offset=0&amp;limit=10 HTTP/1.1&rdquo; 200 163 &ldquo;<a href="http://172.18.0.1/&quot;">http://172.18.0.1/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo;
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:06:02:53 +0000] &ldquo;GET /things?offset=0&amp;limit=10 HTTP/1.1&rdquo; 200 251 &ldquo;<a href="http://172.18.0.1/&quot;">http://172.18.0.1/&quot;</a> &ldquo;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36&rdquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">(ps: 这里时间显示6:02，比本机系统时间快了4小时，可能是时区的设置问题，不影响我们的测试)
+
+接下来我们试着在mainflux-ui界面注册一个用户：</pre></td></tr></table>
+</div>
+</div>
+<p>json
+{
+  &ldquo;email&rdquo;: &ldquo;374192922@qq.com&rdquo;,
+  &ldquo;password&rdquo;: &ldquo;123456&rdquo;
+}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">注册成功了，我们登录进去看看：
+
+&lt;!--![mainflux-ui-07](/images/mainflux-ui-07.png)--&gt;
+![mainflux-ui-07](../../../static/images/mainflux-ui-07.png)
+
+是没有问题的。
+
+### 12.4 发送消息测试
+
+在上一节我们测试了系统的用户创建登录等，这一节将基于前边测试生成的一组账户数据进行设备的通信测试。</pre></td></tr></table>
+</div>
+</div>
+<p>json
+{
+  &ldquo;email&rdquo;: &ldquo;distracted_goldberg@email.com&rdquo;,
+  &ldquo;password&rdquo;: &ldquo;123&rdquo;
+}</p>
+
+<p>&ldquo;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYxNjkzNTMsImlhdCI6MTU2NjEzMzM1MywiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJkaXN0cmFjdGVkX2dvbGRiZXJnQGVtYWlsLmNvbSJ9.48juMD1G25swxXYHe_ydHAY5kUdOC76sF6TebxEIKw4&rdquo;</p>
+
+<p>[
+  {
+    &ldquo;id&rdquo;: &ldquo;472afd2e-eb93-4a35-a043-c766ae5bb340&rdquo;,
+    &ldquo;key&rdquo;: &ldquo;f586a9d6-65b2-402a-991f-df3f589dde03&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;d0&rdquo;
+  },
+  {
+    &ldquo;id&rdquo;: &ldquo;b0963af4-9c86-4b1b-b66e-83225c3a61dc&rdquo;,
+    &ldquo;key&rdquo;: &ldquo;4e7a2353-e190-474c-b870-09119540d07a&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;d1&rdquo;
+  }
+]</p>
+
+<p>[
+  {
+    &ldquo;id&rdquo;: &ldquo;56e9b2eb-1825-4405-9cfd-8f5da524bc5a&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;c0&rdquo;
+  },
+  {
+    &ldquo;id&rdquo;: &ldquo;ffd36101-2eca-4a1f-995e-40db52ae3546&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;c1&rdquo;
+  }
+]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">先在mainflux-ui界面登录该账号，便于查看变化。
+
+&lt;!--![mainflux-ui-08](/images/mainflux-ui-08.png)--&gt;
+![mainflux-ui-08](../../../static/images/mainflux-ui-08.png)
+
+现在我们可以看到是没有任何消息的。
+
+当系统准备好（`provisioned`）之后，可以以下面类似的方式进行消息传递：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-cli messages send <channel_id> &lsquo;[{&ldquo;bn&rdquo;:&ldquo;some-base-name:&ldquo;,&ldquo;bt&rdquo;:1.276020076001e+09, &ldquo;bu&rdquo;:&ldquo;A&rdquo;,&ldquo;bver&rdquo;:5, &ldquo;n&rdquo;:&ldquo;voltage&rdquo;,&ldquo;u&rdquo;:&ldquo;V&rdquo;,&ldquo;v&rdquo;:120.1}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-5,&ldquo;v&rdquo;:1.2}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-4,&ldquo;v&rdquo;:1.3}]&rsquo; <thing_key></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这里我在终端输入：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-cli messages send 56e9b2eb-1825-4405-9cfd-8f5da524bc5a &lsquo;[{&ldquo;bn&rdquo;:&ldquo;some-base-name:&ldquo;,&ldquo;bt&rdquo;:1.276020076001e+09, &ldquo;bu&rdquo;:&ldquo;A&rdquo;,&ldquo;bver&rdquo;:5, &ldquo;n&rdquo;:&ldquo;voltage&rdquo;,&ldquo;u&rdquo;:&ldquo;V&rdquo;,&ldquo;v&rdquo;:120.1}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-5,&ldquo;v&rdquo;:1.2}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-4,&ldquo;v&rdquo;:1.3}]&rsquo; 472afd2e-eb93-4a35-a043-c766ae5bb340</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">`channel_id`使用的是上面的`c0`，`thing_id`使用的是上面的`d0`。</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ mainflux-cli messages send 56e9b2eb-1825-4405-9cfd-8f5da524bc5a &lsquo;[{&ldquo;bn&rdquo;:&ldquo;some-base-name:&ldquo;,&ldquo;bt&rdquo;:1.276020076001e+09, &ldquo;bu&rdquo;:&ldquo;A&rdquo;,&ldquo;bver&rdquo;:5, &ldquo;n&rdquo;:&ldquo;voltage&rdquo;,&ldquo;u&rdquo;:&ldquo;V&rdquo;,&ldquo;v&rdquo;:120.1}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-5,&ldquo;v&rdquo;:1.2}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-4,&ldquo;v&rdquo;:1.3}]&rsquo; 472afd2e-eb93-4a35-a043-c766ae5bb340</p>
+
+<p>unauthorized access</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">而mainlfux系统的输出是：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;warn&rdquo;,&ldquo;message&rdquo;:&ldquo;Method can_access for channel 56e9b2eb-1825-4405-9cfd-8f5da524bc5a and thing  took 38.792069ms to complete with error: missing or invalid credentials provided.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T06:27:06.144145764Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:06:27:06 +0000] &ldquo;POST /http/channels/56e9b2eb-1825-4405-9cfd-8f5da524bc5a/messages HTTP/1.1&rdquo; 403 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;
+mainflux-http   | {&ldquo;level&rdquo;:&ldquo;warn&rdquo;,&ldquo;message&rdquo;:&ldquo;Method publish to channel 56e9b2eb-1825-4405-9cfd-8f5da524bc5a took 60.581117ms to complete with error: rpc error: code = PermissionDenied desc = missing or invalid credentials provided.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T06:27:06.146926117Z&rdquo;}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">这里要说明下，我前后进行了两次`mainflux-cli provision test`，先后得到`dis_xxx`和`pen_xxx`两个user，使用`dis_xxx`用户进行发送消息测试时，发生了前面的错误。
+
+再试试`pen_xxx`:</pre></td></tr></table>
+</div>
+</div>
+<p>json
+{
+  &ldquo;email&rdquo;: &ldquo;pensive_pike@email.com&rdquo;,
+  &ldquo;password&rdquo;: &ldquo;123&rdquo;
+}</p>
+
+<p>&ldquo;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjYyMjY5MTEsImlhdCI6MTU2NjE5MDkxMSwiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJwZW5zaXZlX3Bpa2VAZW1haWwuY29tIn0.gt443-MvZP93VYzeIMn9tghlPHxpnYWOauhlGd6CLr4&rdquo;</p>
+
+<p>[
+  {
+    &ldquo;id&rdquo;: &ldquo;c7d43640-0dcd-4906-ac6b-6e402977a5ae&rdquo;,
+    &ldquo;key&rdquo;: &ldquo;4a928b88-dc3f-4dd6-b8a0-71a72b8bfc49&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;d0&rdquo;
+  },
+  {
+    &ldquo;id&rdquo;: &ldquo;d3f98848-2c3f-4cb7-9b2d-83ee6cdcbd7b&rdquo;,
+    &ldquo;key&rdquo;: &ldquo;f8416f9d-4c88-4ffc-b3f9-3210db439494&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;d1&rdquo;
+  }
+]</p>
+
+<p>[
+  {
+    &ldquo;id&rdquo;: &ldquo;3e307fb1-d41c-49d1-853f-bc48e0e2f734&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;c0&rdquo;
+  },
+  {
+    &ldquo;id&rdquo;: &ldquo;af1045ac-fdc1-4091-b0ba-234ebe5e167b&rdquo;,
+    &ldquo;name&rdquo;: &ldquo;c1&rdquo;
+  }
+]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">并在终端输入如下：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ mainflux-cli messages send af1045ac-fdc1-4091-b0ba-234ebe5e167b &lsquo;[{&ldquo;bn&rdquo;:&ldquo;some-base-name:&ldquo;,&ldquo;bt&rdquo;:1.276020076001e+09, &ldquo;bu&rdquo;:&ldquo;A&rdquo;,&ldquo;bver&rdquo;:5, &ldquo;n&rdquo;:&ldquo;voltage&rdquo;,&ldquo;u&rdquo;:&ldquo;V&rdquo;,&ldquo;v&rdquo;:120.1}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-5,&ldquo;v&rdquo;:1.2}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-4,&ldquo;v&rdquo;:1.3}]&rsquo; f8416f9d-4c88-4ffc-b3f9-3210db439494</p>
+
+<p>ok</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">同时，mainflux系统终端输出如下：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+mainflux-normalizer | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method normalize took 67.01µs to complete without errors.&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T09:50:15.912996945Z&rdquo;}
+mainflux-http   | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method publish to channel af1045ac-fdc1-4091-b0ba-234ebe5e167b took 1.610837ms to complete without errors.&rdquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T09:50:15.912421876Z&rdquo;}
+mainflux-things | {&ldquo;level&rdquo;:&ldquo;info&rdquo;,&ldquo;message&rdquo;:&ldquo;Method can_access for channel af1045ac-fdc1-4091-b0ba-234ebe5e167b and thing d3f98848-2c3f-4cb7-9b2d-83ee6cdcbd7b took 692.851µs to complete without errors.&ldquo;,&ldquo;ts&rdquo;:&ldquo;2019-08-19T09:50:15.912035693Z&rdquo;}
+mainflux-nginx  | 172.18.0.1 - - [19/Aug/2019:09:50:15 +0000] &ldquo;POST /http/channels/af1045ac-fdc1-4091-b0ba-234ebe5e167b/messages HTTP/1.1&rdquo; 202 0 &ldquo;-&rdquo; &ldquo;Go-http-client/1.1&rdquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span><span class="lnt">210
+</span><span class="lnt">211
+</span><span class="lnt">212
+</span><span class="lnt">213
+</span><span class="lnt">214
+</span><span class="lnt">215
+</span><span class="lnt">216
+</span><span class="lnt">217
+</span><span class="lnt">218
+</span><span class="lnt">219
+</span><span class="lnt">220
+</span><span class="lnt">221
+</span><span class="lnt">222
+</span><span class="lnt">223
+</span><span class="lnt">224
+</span><span class="lnt">225
+</span><span class="lnt">226
+</span><span class="lnt">227
+</span><span class="lnt">228
+</span><span class="lnt">229
+</span><span class="lnt">230
+</span><span class="lnt">231
+</span><span class="lnt">232
+</span><span class="lnt">233
+</span><span class="lnt">234
+</span><span class="lnt">235
+</span><span class="lnt">236
+</span><span class="lnt">237
+</span><span class="lnt">238
+</span><span class="lnt">239
+</span><span class="lnt">240
+</span><span class="lnt">241
+</span><span class="lnt">242
+</span><span class="lnt">243
+</span><span class="lnt">244
+</span><span class="lnt">245
+</span><span class="lnt">246
+</span><span class="lnt">247
+</span><span class="lnt">248
+</span><span class="lnt">249
+</span><span class="lnt">250
+</span><span class="lnt">251
+</span><span class="lnt">252
+</span><span class="lnt">253
+</span><span class="lnt">254
+</span><span class="lnt">255
+</span><span class="lnt">256
+</span><span class="lnt">257
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">至此，mainflux官方文档Getting Startted一节完全跑通。
+
+类比之下，我们前面在开发者文档里边所做的无非是编译了所有微服务程序，构建了必要的docker镜像及容器，只是nats等软件我们没有通过docker的方式安装而是真实安装在了我们的物理环境中。并不影响整个系统的运转，同样是没有问题的。
+
+## 13. mainflux架构、概念
+
+### 13.1 架构
+
+mainflux架构如图：
+
+&lt;!--![mainflux-architeture](/images/mainflux-architecture.jpg)--&gt;
+![mainflux-architecture](../../../static/images/mainflux-architecture.jpg)
+
+mainflux有三个主要的模型：user、thing、channel。user代表管理员，thing映射实际连接的设备，channel指一个通信频道，也可以理解为mqtt中的topic主题，连接到同一个channel的设备可以获取这个channel中的信息，也就是说实现了互相通信。
+
+这里要注意两点：
+
+- channel的物理实现是NATS消息系统的subject主题，nats基于channel_id来创建对应的主题名称。
+- Normalizer负责将数据转换为SenML格式
+
+### 13.2 Provisioning
+
+`Provisioning`指的是物联网平台配置的过程，在mainflux中它指的是系统操作员创建配置user、channel、thing等实体的过程。
+
+ps: 使用docker-compose.yml运行整个mainflux系统时，所有的服务都运行在nginx代理的后面，数据传输也都经过`TLS`加密。
+
+#### 13.2.1 用户管理
+
+- 创建user：
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -X POST -H &#34;Content-Type: application/json&#34; https://localhost/users -d &#39;{&#34;email&#34;:&#34;john.doe@email.com&#34;, &#34;password&#34;:&#34;123&#34;}&#39;
+    ```
+
+- 获取user授权密钥（authorization key）：
+
+    为了让user能够管理整个系统，需要user创建授权令牌（token）。
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -X POST -H &#34;Content-Type: application/json&#34; https://localhost/tokens -d &#39;{&#34;email&#34;:&#34;john.doe@email.com&#34;, &#34;password&#34;:&#34;123&#34;}&#39;
+    ```
+
+    响应形如：
+
+    ```json
+    {
+      &#34;token&#34;: &#34;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MjMzODg0NzcsImlhdCI6MTUyMzM1MjQ3NywiaXNzIjoibWFpbmZsdXgiLCJzdWIiOiJqb2huLmRvZUBlbWFpbC5jb20ifQ.cygz9zoqD7Rd8f88hpQNilTCAS1DrLLgLg4PRcH-iAI&#34;
+    }
+    ```
+
+#### 13.2.2 系统配置（provision）
+
+在进行这一步之前，确保已经创建了user并为其创建了授权秘钥。
+
+- 配置thing
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -X POST -H &#34;Content-Type: application/json&#34; -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/things -d &#39;{&#34;name&#34;:&#34;weio&#34;}&#39;
+    ```
+
+    `&lt;user_auth_token&gt;`用来指定thing归属于哪个user。
+
+    响应形如：
+
+    ```json
+    HTTP/1.1 201 Created
+    Content-Type: application/json
+    Location: /things/81380742-7116-4f6f-9800-14fe464f6773
+    Date: Tue, 10 Apr 2018 10:02:59 GMT
+    Content-Length: 0
+    ```
+
+    响应中`Location`字段的值为所配置的thing的路径。
+
+- 从数据库中读取并解析指定user配置的things
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/things
+    ```
+
+    响应形如：
+
+    ```json
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Date: Tue, 10 Apr 2018 10:50:12 GMT
+    Content-Length: 1105
+
+    {
+    &#34;total&#34;: 2,
+    &#34;offset&#34;: 0,
+    &#34;limit&#34;: 10,
+    &#34;things&#34;: [
+        {
+        &#34;id&#34;: &#34;81380742-7116-4f6f-9800-14fe464f6773&#34;,
+        &#34;name&#34;: &#34;weio&#34;,
+        &#34;key&#34;: &#34;7aa91f7a-cbea-4fed-b427-07e029577590&#34;
+        },
+        {
+        &#34;id&#34;: &#34;cb63f852-2d48-44f0-a0cf-e450496c6c92&#34;,
+        &#34;name&#34;: &#34;myapp&#34;,
+        &#34;key&#34;: &#34;cbf02d60-72f2-4180-9f82-2c957db929d1&#34;
+        }
+    ]
+    }
+    ```
+
+    也可以指定`offset`（设置读取的数据条目间隔）和`limit`（设置读取的数据条目数）参数：
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/things?offset=0&amp;limit=5
+    ```
+
+    不指定`offset`和`limit`参数时其默认值分别为0和10，而且`limit`不可以超过100。
+
+- 移除thing:
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -X DELETE -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/things/&lt;thing_id&gt;
+    ```
+
+- 配置channel
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -X POST -H &#34;Content-Type: application/json&#34; -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/channels -d &#39;{&#34;name&#34;:&#34;mychan&#34;}&#39;
+    ```
+
+    响应形如：
+
+    ```json
+    HTTP/1.1 201 Created
+    Content-Type: application/json
+    Location: /channels/19daa7a8-a489-4571-8714-ef1a214ed914
+    Date: Tue, 10 Apr 2018 11:30:07 GMT
+    Content-Length: 0
+    ```
+
+- 解析指定用户配置的channels：
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/channels
+    ```
+
+    响应形如：
+
+    ```json
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Date: Tue, 10 Apr 2018 11:38:06 GMT
+    Content-Length: 139
+
+    {
+    &#34;total&#34;: 1,
+    &#34;offset&#34;: 0,
+    &#34;limit&#34;: 10,
+    &#34;channels&#34;: [
+        {
+        &#34;id&#34;: &#34;19daa7a8-a489-4571-8714-ef1a214ed914&#34;,
+        &#34;name&#34;: &#34;mychan&#34;
+        }
+    ]
+    }
+    ```
+
+    也可以指定`offset`和`limit`参数：
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/channels?offset=0&amp;limit=5
+    ```
+
+- 移除channel：
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -X DELETE -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/channels/&lt;channel_id&gt;
+    ```
+
+#### 13.2.3 访问控制
+
+只有user能管理user名下的channel和thing!!!
+
+- 将thing连接到channel上：
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -X PUT -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/channels/&lt;channel_id&gt;/things/&lt;thing_id&gt;
+    ```
+
+- 查看channel上有哪些thing连接
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/channels/&lt;channel_id&gt;/things
+    ```
+
+    得到的响应输出会是这样的：
+
+    ```json
+    {
+        &#34;total&#34;: 2,
+        &#34;offset&#34;: 0,
+        &#34;limit&#34;: 10,
+        &#34;things&#34;: [
+            {
+            &#34;id&#34;: &#34;3ffb3880-d1e6-4edd-acd9-4294d013f35b&#34;,
+            &#34;name&#34;: &#34;d0&#34;,
+            &#34;key&#34;: &#34;b1996995-237a-4552-94b2-83ec2e92a040&#34;,
+            &#34;metadata&#34;: &#34;{}&#34;
+            },
+            {
+            &#34;id&#34;: &#34;94d166d6-6477-43dc-93b7-5c3707dbef1e&#34;,
+            &#34;name&#34;: &#34;d1&#34;,
+            &#34;key&#34;: &#34;e4588a68-6028-4740-9f12-c356796aebe8&#34;,
+            &#34;metadata&#34;: &#34;{}&#34;
+            }
+        ]
+    }
+    ```
+
+- 也可以查看指定thing连接在了哪些channel上：
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/things/&lt;thing_id&gt;/channels
+    ```
+
+    响应会像是这样的：
+
+    ```json
+    {
+        &#34;total&#34;: 2,
+        &#34;offset&#34;: 0,
+        &#34;limit&#34;: 10,
+        &#34;channels&#34;: [
+            {
+            &#34;id&#34;: &#34;5e62eb13-2695-4860-8d87-85b8a2f80fd4&#34;,
+            &#34;name&#34;: &#34;c1&#34;,
+            &#34;metadata&#34;: &#34;{}&#34;
+            },
+            {
+            &#34;id&#34;: &#34;c4b5e19a-7ffe-4172-b2c5-c8b9d570a165&#34;,
+            &#34;name&#34;: &#34;c0&#34;,
+            &#34;metadata&#34;:&#34;{}&#34;
+            }
+        ]
+    }
+    ```
+
+- 也可以取消某thing与某channel的连接：
+
+    ```shell
+    curl -s -S -i --cacert docker/ssl/certs/mainflux-server.crt --insecure -X DELETE -H &#34;Authorization: &lt;user_auth_token&gt;&#34; https://localhost/channels/&lt;channel_id&gt;/things/&lt;thing_id&gt;
+    ```
+
+ps: 除去涉及证书加密的部分，后边的url请求还是很容易懂的。
+
+### 13.3 Messaging
+
+网络通信协议处理的是客户端与nginx、nginx与网络协议适配服务的通信，在mainflux中有http、mqtt、websocket、coap四种。
+
+#### 13.3.1 http</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+curl -s -S -i &ndash;cacert docker/ssl/certs/mainflux-server.crt &ndash;insecure -X POST -H &ldquo;Content-Type: application/senml+json&rdquo; -H &ldquo;Authorization: <thing_token>&rdquo; <a href="https://localhost/http/channels/">https://localhost/http/channels/</a><channel_id>/messages -d &lsquo;[{&ldquo;bn&rdquo;:&ldquo;some-base-name:&ldquo;,&ldquo;bt&rdquo;:1.276020076001e+09, &ldquo;bu&rdquo;:&ldquo;A&rdquo;,&ldquo;bver&rdquo;:5, &ldquo;n&rdquo;:&ldquo;voltage&rdquo;,&ldquo;u&rdquo;:&ldquo;V&rdquo;,&ldquo;v&rdquo;:120.1}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-5,&ldquo;v&rdquo;:1.2}, {&ldquo;n&rdquo;:&ldquo;current&rdquo;,&ldquo;t&rdquo;:-4,&ldquo;v&rdquo;:1.3}]&rsquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">注意：如果使用SenML格式，所发送的数据需要是数组形式。（暂时不清楚是怎么样的数组）
+
+#### 13.3.2 MQTT
+
+为了通过mqtt发送消息，需要使用mosquitto工具&lt;https://mosquitto.org/&gt;。如果想使用基于websocket的mqtt，则需要使用paho&lt;https://www.eclipse.org/paho/&gt;。
+
+- 在channel上发布消息（pub）：
+
+    ```shell
+    mosquitto_pub -u &lt;thing_id&gt; -P &lt;thing_key&gt; -t channels/&lt;channel_id&gt;/messages -h localhost -m &#39;[{&#34;bn&#34;:&#34;some-base-name:&#34;,&#34;bt&#34;:1.276020076001e+09, &#34;bu&#34;:&#34;A&#34;,&#34;bver&#34;:5, &#34;n&#34;:&#34;voltage&#34;,&#34;u&#34;:&#34;V&#34;,&#34;v&#34;:120.1}, {&#34;n&#34;:&#34;current&#34;,&#34;t&#34;:-5,&#34;v&#34;:1.2}, {&#34;n&#34;:&#34;current&#34;,&#34;t&#34;:-4,&#34;v&#34;:1.3}]&#39;
+    ```
+
+- thing订阅channel：
+
+    ```shell
+    mosquitto_sub -u &lt;thing_id&gt; -P &lt;thing_key&gt; -t channels/&lt;channel_id&gt;/messages -h localhost
+    ```
+
+    In order to pass content type as part of topic, one should append it to the end of an existing topic. Content type value should always be prefixed with `/ct/`. If you want to use standard topic such as `channels/&lt;channel_id&gt;/messages` with SenML content type, you should use following topic `channels/&lt;channel_id&gt;/messages/ct/application_senml-json`. Characters like `_` and `-` in the content type will be replaced with `/` and `+` respectively.
+
+    If you are using TLS to secure MQTT connection, add `--cafile docker/ssl/certs/ca.crt` to every command.
+
+### 13.4 Storage
+
+mainflux支持多种用于存储设备消息的数据库：cassandra/influxdb/mongodb
+
+ps: 从docker-compose.yml文件可以看出，mainflux核心服务中使用了redis作为things、es、mqtt的缓存数据库，postgres作为users、things的数据库。和本节所讲的存储不同，本节主要指的是设备间通信`Message`的持久化存储方案。
+
+这些存储`Storage`的安装需要通过docker-compose addons。
+
+在`mainflux/docker/addons`目录下可以找到mainflux的非核心服务，其中就包括了storage的6个服务。</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+eiger@eiger-ThinkPad-X1-Carbon-3rd:~/gopath-default/src/github.com/mainflux/mainflux$ ls docker/addons
+bootstrap  cassandra-reader  cassandra-writer  influxdb-reader  influxdb-writer  lora-adapter  mongodb-reader  mongodb-writer  postgres-reader  postgres-writer</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">注意，必须把核心服务先启动起来（`make run`）才能安装和启动这些插件服务。
+
+#### 13.4.1 Writers
+
+`Witers`包括cassandra-writer、influxdb-writer、mongodb-writer。`writer`负责使用、并且将SenML标准化后的消息存储到对应的数据库中。
+
+`writer`会根据channels.toml中的配置来过滤对应channel的消息。如果想要监听所有channel的消息，channels.toml内容可以配置如下：</pre></td></tr></table>
+</div>
+</div>
+<p>toml
+[channels]
+filter = [&rdquo;*&ldquo;]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">否则传入channels_id的列表。（这里还不确定传入的是会被过滤还是会被监听，这里有些含糊，有待后边去测试使用）
+
+说得直白点是，writer运行起来后会监听channel的消息，并将消息进行持久化存储。
+
+这里只介绍monggodb-writer，其他自行参考&lt;https://mainflux.readthedocs.io/en/latest/storage/&gt;
+
+mongodb-writer安装：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+docker-compose -f docker/addons/mongodb-writer/docker-compose.yml up -d</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mongodb默认端口为27017，可以使用各种工具来进行数据库监视和数据可视化。
+
+#### 13.4.2 Readers
+
+`Readers`与`Writers`相对应，要想使用某个reader，必须先安装启用某个writer。reader负责从数据库中读取数据并将其从SenML格式解码，并且对外提供`HTTP API`用于消息访问或者说消息的使用。
+
+同样的，这里也只介绍mongodb-reader。
+
+安装和启动：</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+docker-compose -f docker/addons/mongodb-reader/docker-compose.yml up -d</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">mongodb-reader对外暴露8903端口来提供`HTTP API`&lt;https://github.com/mainflux/mainflux/blob/master/readers/swagger.yml&gt;以获取消息。</pre></td></tr></table>
+</div>
+</div>
+<p>shell
+curl -s -S -i  -H &ldquo;Authorization: <thing_token>&rdquo; <a href="http://localhost:8904/channels/">http://localhost:8904/channels/</a><channel_id>/messages
 ```</p>
 
-<p>这一步会生成一个临时测试用户<code>user</code>，并登陆，然后创建属于其的两个<code>thing</code>和两个<code>channel</code>。这将用作测试场景。关于系统准备<code>system provision</code>的更多内容参考：<a href="https://mainflux.readthedocs.io/en/latest/provisioning/">https://mainflux.readthedocs.io/en/latest/provisioning/</a></p>
+<h4 id="13-4-2-reader">13.4.2 Reader</h4>
+
+<h3 id="13-5-lora">13.5 LoRa</h3>
+
+<p>长范围通信协议。<a href="https://mainflux.readthedocs.io/en/latest/lora/">https://mainflux.readthedocs.io/en/latest/lora/</a></p>
+
+<p>此节跳过。</p>
+
+<h3 id="13-6-安全通信">13.6 安全通信</h3>
+
+<h4 id="13-6-1-安全的postgresql连接">13.6.1 安全的PostgreSQL连接</h4>
+
+<p>默认连接是不安全的连接。如果需要安全连接，可以选择<code>SSL</code>模式，并且设置相应的证书和秘钥文件的路径。</p>
+
+<ul>
+<li><code>MF_USERS_DB_SSL_MODE</code> the SSL connection mode for Users.</li>
+<li><code>MF_USERS_DB_SSL_CERT</code> the path to the certificate file for Users.</li>
+<li><code>MF_USERS_DB_SSL_KEY</code> the path to the key file for Users.</li>
+
+<li><p><code>MF_USERS_DB_SSL_ROOT_CERT</code> the path to the root certificate file for Users.</p></li>
+
+<li><p><code>MF_THINGS_DB_SSL_MODE</code> the SSL connection mode for Things.</p></li>
+
+<li><p><code>MF_THINGS_DB_SSL_CERT</code> the path to the certificate file for Things.</p></li>
+
+<li><p><code>MF_THINGS_DB_SSL_KEY</code> the path to the key file for Things.</p></li>
+
+<li><p><code>MF_THINGS_DB_SSL_ROOT_CERT</code> the path to the root certificate file for Things.</p></li>
+</ul>
+
+<p>支持的数据库连接模式有: <code>disabled</code> (默认), <code>required</code>, <code>verify-ca</code> 和 <code>verify-full</code>。</p>
+
+<h4 id="13-6-2-安全的grpc">13.6.2 安全的gRPC</h4>
+
+<ol>
+<li><p>服务器配置
+默认情况下gRPC通信是不安全的，因为mainflux通常运行在反向代理之后的私有网络中。</p>
+
+<p>但是可以配置其使用<code>TLS</code>加密传输</p>
+
+<ul>
+<li><p>Users:</p>
+
+<ul>
+<li><code>MF_USERS_SERVER_CERT</code> the path to server certificate in pem format.</li>
+<li><code>MF_USERS_SERVER_KEY</code> the path to the server key in pem format.</li>
+</ul></li>
+
+<li><p>Things:</p>
+
+<ul>
+<li><code>MF_THINGS_SERVER_CERT</code> the path to server certificate in pem format.</li>
+<li><code>MF_THINGS_SERVER_KEY</code> the path to the server key in pem format.</li>
+</ul></li>
+</ul>
+
+<p>注意：证书和秘钥必须两个都设置好才行，否则都是不安全的通信。</p></li>
+
+<li><p>客户端配置</p>
+
+<p>如果想为users和things提供安全的gRPC连接，必须定义可信的CA证书，而且不支持共同的身份验证（mutual certificate authentication）</p>
+
+<ul>
+<li><p>Adapter适配器配置</p>
+
+<p><code>MF_HTTP_ADAPTER_CA_CERTS</code>, <code>MF_MQTT_ADAPTER_CA_CERTS</code>, <code>MF_WS_ADAPTER_CA_CERTS</code>, <code>MF_COAP_ADAPTER_CA_CERTS</code> - the path to a file that contains the CAs in PEM format. If not set, the default connection will be insecure. If it fails to read the file, the adapter will fail to start up.</p></li>
+
+<li><p>Things配置</p>
+
+<p><code>MF_THINGS_CA_CERTS</code> - the path to a file that contains the CAs in PEM format. If not set, the default connection will be insecure. If it fails to read the file, the service will fail to start up.</p></li>
+</ul></li>
+</ol>
+
+<h3 id="13-7-authentication-认证">13.7 Authentication（认证）</h3>
+
+<h4 id="13-7-1-使用mainflux秘钥认证">13.7.1 使用Mainflux秘钥认证</h4>
+
+<p>默认情况下mainflux使用mainflux key进行认证。mainflux key指的是在thing创建时生成的一个秘钥。为了认证身份，thing在发送消息时需要加上它的这个秘钥。如何传递这个秘钥取决于所采用的传输协议。关于秘钥如何传递，应参考<a href="#133-messaging">Messaging</a>。</p>
+
+<p>注意当使用<code>docker-compose -f docker/docker-compose.yml up</code>启动mainflux时采用的就是这种认证方式。</p>
+
+<h4 id="13-7-2-使用x-509证书进行相互tls认证">13.7.2 使用X.509证书进行相互TLS认证</h4>
+
+<p><a href="https://mainflux.readthedocs.io/en/latest/authentication/">https://mainflux.readthedocs.io/en/latest/authentication/</a></p>
+
+<h3 id="13-8-cli">13.8 CLI</h3>
+
+<p>CLI指令很简单，之间看官方文档：
+<a href="https://mainflux.readthedocs.io/en/latest/cli/">https://mainflux.readthedocs.io/en/latest/cli/</a></p>
+
+<p>或者自己使用<code>mainflux-cli help</code>和<code>mainflux-cli [COMMAND] --help</code>查看帮助信息。</p>
+
+<h3 id="13-9-bootstrap-引导">13.9 Bootstrap（引导）</h3>
+
+<p>Bootstrapping是指一个自启动过程，应该在没有外部输入的情况下继续进行。 Mainflux平台支持自举过程，但有些前提条件需要提前完成。设备可以在以下情况下触发引导：</p>
+
+<ul>
+<li>设备仅包含引导凭证且没有Mainflux凭证</li>
+<li>设备由于任何原因无法启动与配置的Mainflux服务（服务器无响应，身份验证失败等）的通信。</li>
+<li>设备出于任何原因想要更新其配置</li>
+</ul>
+
+<p>Bootstrapping和Provisioning的区别在于：</p>
+
+<ul>
+<li>Provisioning是由系统管理员进行的实体管理，包括user/thing/channel的创建、查看、删除与访问控制。</li>
+<li>Bootstrapping是实体配置，指的是device端管理员进行的的配置操作。包括创建channel/thing，修改thing的信息，使能thing等等。</li>
+</ul>
+
+<p>参看官方文档：<a href="https://mainflux.readthedocs.io/en/latest/bootstrap/">https://mainflux.readthedocs.io/en/latest/bootstrap/</a></p>
+
+<h2 id="14-mainflux应用">14. mainflux应用</h2>
+
+<h3 id="14-1-连接一个mqtt设备">14.1 连接一个mqtt设备</h3>
+
+<p>大致思路：准备一个mqtt客户端，在mainflux系统为<code>374192922@qq.com</code>用户创建一个<code>channel</code>和一个<code>thing</code>，这个thing就对应着这个mqtt客户端</p>
 
     </div>
 

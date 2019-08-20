@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-08-17T04:42:16&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-17T04:42:16&#43;08:00" />
-<meta itemprop="wordCount" content="194">
+<meta itemprop="wordCount" content="219">
 
 
 
@@ -135,7 +135,7 @@
         <div class="post-category">
             <a href="/categories/linux/"> linux </a>
             </div>
-          <span class="more-meta"> 194 words </span>
+          <span class="more-meta"> 219 words </span>
           <span class="more-meta"> 1 min read </span>
         
       </div>
@@ -150,6 +150,7 @@
 <ul>
 <li><a href="#docker-compose安装">docker-compose安装</a></li>
 <li><a href="#docker换源">docker换源</a></li>
+<li><a href="#docker停止容器">docker停止容器</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -208,6 +209,17 @@ docker-compose version <span class="m">1</span>.24.1, build 4667896b</code></pre
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-shell" data-lang="shell">sudo service docker restart</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="docker停止容器">docker停止容器</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># 终止所有容器</span>
+docker stop <span class="k">$(</span>docker ps -a -q<span class="k">)</span></code></pre></td></tr></table>
 </div>
 </div>
     </div>

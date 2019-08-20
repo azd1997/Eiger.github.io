@@ -170,13 +170,6 @@
   </url>
   
   <url>
-    <loc>https://azd1997.github.io/tags/go%E8%AF%AD%E8%A8%80/</loc>
-    <lastmod>2019-08-15T13:56:37+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://azd1997.github.io/categories/go%E8%AF%AD%E8%A8%80/</loc>
     <lastmod>2019-08-15T13:56:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -184,7 +177,21 @@
   </url>
   
   <url>
+    <loc>https://azd1997.github.io/tags/go%E8%AF%AD%E8%A8%80/</loc>
+    <lastmod>2019-08-15T13:56:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://azd1997.github.io/post/go/01_goroutinepool/</loc>
+    <lastmod>2019-08-15T13:56:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://azd1997.github.io/tags/homeassistant/</loc>
     <lastmod>2019-08-15T13:56:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -199,6 +206,13 @@
   
   <url>
     <loc>https://azd1997.github.io/categories/iro/</loc>
+    <lastmod>2019-08-15T13:56:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://azd1997.github.io/post/iro/01_connectyourraspi/</loc>
     <lastmod>2019-08-15T13:56:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -226,7 +240,7 @@
   </url>
   
   <url>
-    <loc>https://azd1997.github.io/tags/spring-boot/</loc>
+    <loc>https://azd1997.github.io/tags/magicmirror/</loc>
     <lastmod>2019-08-15T13:56:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -240,7 +254,21 @@
   </url>
   
   <url>
+    <loc>https://azd1997.github.io/tags/spring-boot/</loc>
+    <lastmod>2019-08-15T13:56:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://azd1997.github.io/post/java/01_startspringbootproject/</loc>
+    <lastmod>2019-08-15T13:56:37+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://azd1997.github.io/tags/wukong/</loc>
     <lastmod>2019-08-15T13:56:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -304,13 +332,6 @@
   
   <url>
     <loc>https://azd1997.github.io/post/go/01_colorlog/</loc>
-    <lastmod>2019-08-15T13:56:37+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://azd1997.github.io/post/iro/01_connectyourraspi/</loc>
     <lastmod>2019-08-15T13:56:37+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
