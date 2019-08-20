@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-07-23T10:37:14&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-15T13:56:37&#43;08:00" />
-<meta itemprop="wordCount" content="2293">
+<meta itemprop="wordCount" content="3159">
 
 
 
@@ -135,8 +135,8 @@
         <div class="post-category">
             <a href="/categories/iro/"> iro </a>
             </div>
-          <span class="more-meta"> 2293 words </span>
-          <span class="more-meta"> 5 mins read </span>
+          <span class="more-meta"> 3159 words </span>
+          <span class="more-meta"> 7 mins read </span>
         
       </div>
     </header>
@@ -169,6 +169,20 @@
 </ul></li>
 <li><a href="#2-6-静态ip配置文件修改法">2.6 静态IP配置文件修改法</a></li>
 </ul></li>
+<li><a href="#3-安装magicmirror魔镜">3. 安装MagicMirror魔镜</a>
+<ul>
+<li><a href="#3-1-魔镜看法">3.1 魔镜看法</a></li>
+<li><a href="#3-2-安装">3.2 安装</a></li>
+<li><a href="#3-3-配置">3.3 配置</a>
+<ul>
+<li><a href="#3-3-1-树莓派系统上的一些设置">3.3.1 树莓派系统上的一些设置</a></li>
+<li><a href="#3-3-2-设置魔镜自启动">3.3.2 设置魔镜自启动</a></li>
+<li><a href="#3-3-3-设置魔镜配置文件">3.3.3 设置魔镜配置文件</a></li>
+<li><a href="#3-3-4-魔镜模块配置">3.3.4 魔镜模块配置</a></li>
+<li><a href="#3-3-5-魔镜第三方模块">3.3.5 魔镜第三方模块</a></li>
+<li><a href="#3-3-6-魔镜第三方模块开发">3.3.6 魔镜第三方模块开发</a></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -198,37 +212,31 @@
 <li>设置网卡属性。无线网卡设置共享给以太网卡，以太网卡则将IP固定为192.168.137.1（必须和树莓派所设静态IP处于同一网段）</li>
 </ul>
 
-<!--![1562500876686](/images/1562500876686.png)-->
+<p><img src="/images/1562500876686.png" alt="1562500876686" />
+<!-- ![1562500876686](../../../static/images/1562500876686.png) --></p>
 
-<p><img src="../../../static/images/1562500876686.png" alt="1562500876686" /></p>
+<p><img src="/images/1562500909972.png" alt="1562500909972" />
+<!-- ![1562500909972](../../../static/images/1562500909972.png)--></p>
 
-<!--![1562500909972](/images/1562500909972.png)-->
-
-<p><img src="../../../static/images/1562500909972.png" alt="1562500909972" /></p>
-
-<!--![1562500945482](/images/1562500945482.png)-->
-
-<p><img src="../../../static/images/1562500945482.png" alt="1562500945482" /></p>
+<p><img src="/images/1562500945482.png" alt="1562500945482" />
+<!-- ![1562500945482](../../../static/images/1562500945482.png) --></p>
 
 <ul>
 <li>查询树莓派IP。用网线连接好笔记本和树莓派之后就可以查看树莓派IP，尽管之前设置了静态IP，看看也不坏事不是？ipconfig查看本机网卡IP，arp -a查看所有与本机相连的设备。如截图所示，192.168.137.10即为树莓派IP。（奇怪的是不是写定的192.168.137.13，而是有10和210两个，经过ping测试和ssh测试，192.168.137.10为树莓派IP）</li>
 </ul>
 
-<!--![1562500723912](/images/1562500723912.png)-->
+<p><img src="/images/1562500723912.png" alt="1562500723912" />
+<!-- ![1562500723912](../../../static/images/1562500723912.png) --></p>
 
-<p><img src="../../../static/images/1562500723912.png" alt="1562500723912" /></p>
-
-<!--![1562500749779](/images/1562500749779.png)-->
-
-<p><img src="../../../static/images/1562500749779.png" alt="1562500749779" /></p>
+<p><img src="/images/1562500749779.png" alt="1562500749779" />
+<!-- ![1562500749779](../../../static/images/1562500749779.png) --></p>
 
 <ul>
 <li>SSH连接。使用Putty、Xshell等工具进行SSH连接。ip为所查询到的树莓派IP，port为22。树莓派默认账号为pi，密码为raspberry。至此，成功连接树莓派。</li>
 </ul>
 
-<!--![1562500659427](/images/1562500659427.png)-->
-
-<p><img src="../../../static/images/1562500659427.png" alt="1562500659427" /></p>
+<p><img src="/images/1562500659427.png" alt="1562500659427" />
+<!-- ![1562500659427](../../../static/images/1562500659427.png) --></p>
 
 <h2 id="2-初次使用树莓派的一些设置">2. 初次使用树莓派的一些设置</h2>
 
@@ -236,9 +244,8 @@
 
 <p><img src="/images/1562506863061.png" alt="1562506863061" /></p>
 
-<!--![1562506863061](/images/1562506863061.png)-->
-
-<p><img src="../../../static/images/1562506863061.png" alt="1562506863061" /></p>
+<p><img src="/images/1562506863061.png" alt="1562506863061" />
+<!-- ![1562506863061](../../../static/images/1562506863061.png) --></p>
 
 <h3 id="2-2-系统设置">2.2 系统设置</h3>
 
@@ -325,7 +332,7 @@ shutdown -r now</code></pre></td></tr></table>
 </div>
 <p>nano编辑器 <code>CTRL O</code>保存并指定文件名，<code>CTRL X</code>退出</p>
 
-<p><img src="C:Users37419AppDataRoamingTyporatypora-user-images1562510657876.png" alt="1562510657876" /></p>
+<p><img src="/images/1562510657876.png" alt="1562510657876" /></p>
 
 <p>最后更新一下</p>
 <div class="highlight"><div class="chroma">
@@ -414,6 +421,159 @@ static <span class="nv">domain_name_servers</span><span class="o">=</span><span 
 <p>奇怪的是，192.168.137.169现在变成真正的静态IP了，不管了，现在不追究这些细节。</p>
 
 <p>还可以参考这篇：<a href="https://blog.csdn.net/Jack_Lue/article/details/82912327">https://blog.csdn.net/Jack_Lue/article/details/82912327</a></p>
+
+<h2 id="3-安装magicmirror魔镜">3. 安装MagicMirror魔镜</h2>
+
+<h3 id="3-1-魔镜看法">3.1 魔镜看法</h3>
+
+<p>​魔镜的本质只是一个全屏的WEB网页，而魔镜项目做成了Node.js的一个模块。因此安装魔镜实际上是安装Node.js并在其上安装魔镜网页并同时启动服务端和客户端。</p>
+
+<h3 id="3-2-安装">3.2 安装</h3>
+
+<p>安装直接按照其Github上README进行即可。搬运过来：</p>
+
+<ol>
+<li>Download and install the latest <em>Node.js</em> version:</li>
+</ol>
+
+<ul>
+<li><code>curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -</code></li>
+<li><code>sudo apt install -y nodejs</code></li>
+</ul>
+
+<ol>
+<li>Clone the repository and check out the master branch: <code>git clone https://github.com/MichMich/MagicMirror</code></li>
+<li>Enter the repository: <code>cd MagicMirror/</code></li>
+<li>Install and run the app with: <code>npm install &amp;&amp; npm start</code>
+For <strong>Server Only</strong> use: <code>npm install &amp;&amp; node serveronly</code> .</li>
+</ol>
+
+<p><strong>⚠️ Important!</strong></p>
+
+<ul>
+<li><strong>The installation step for npm install will take a very long time</strong>, often with little or no terminal response!
+For the RPi3 this is <strong>~10</strong> minutes and for the Rpi2 <strong>~25</strong> minutes.
+Do not interrupt or you risk getting a 💔 by Raspberry Jam.</li>
+</ul>
+
+<p>Also note that:</p>
+
+<ul>
+<li><code>npm start</code> does <strong>not</strong> work via SSH. But you can use <code>DISPLAY=:0 nohup npm start &amp;</code> instead.
+This starts the mirror on the remote display.</li>
+<li>If you want to debug on Raspberry Pi you can use <code>npm start dev</code> which will start MM with <em>Dev Tools</em> enabled.</li>
+<li>To access toolbar menu when in mirror mode, hit <code>ALT</code> key.</li>
+<li>To toggle the (web) <code>Developer Tools</code> from mirror mode, use <code>CTRL-SHIFT-I</code> or <code>ALT</code> and select <code>View</code>.</li>
+</ul>
+
+<h3 id="3-3-配置">3.3 配置</h3>
+
+<p>执行安装步骤最后一步`<code>npm install &amp;&amp; npm start</code>之后，会显示魔镜默认页面</p>
+
+<p><img src="/images/1562585803263.png" alt="1562585803263" /></p>
+
+<p>显然，需要创建一个所谓的config文件。</p>
+
+<p>阅读了一下魔镜项目README，需要配置的还挺多的。</p>
+
+<h4 id="3-3-1-树莓派系统上的一些设置">3.3.1 树莓派系统上的一些设置</h4>
+
+<p><a href="https://github.com/MichMich/MagicMirror/wiki/Configuring-the-Raspberry-Pi">https://github.com/MichMich/MagicMirror/wiki/Configuring-the-Raspberry-Pi</a></p>
+
+<p>我在这里只做了开启OpenGL和安装鼠标自动隐藏插件两步。其他设置如自启动等等软件方面弄完了部署时再做。</p>
+
+<p><img src="/images/1562586332912.png" alt="1562586332912" /></p>
+
+<p>开启OpenGL后config.txt所设置的竖屏就会失效，此时采用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+添加：
+@xrandr --output HDMI-1 --rotate right</code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="/images/1562586962628.png" alt="1562586962628" /></p>
+
+<p>重启后，画面仍没有转为右向（竖屏），先不管，后边再补充。</p>
+
+<p>接下来设置鼠标自动隐藏：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">安装unclutter:
+sudo apt-get install unclutter
+
+配置unclutter自启动
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+添加：
+@xrandr --output HDMI-1 --rotate right</code></pre></td></tr></table>
+</div>
+</div>
+<p><img src="/images/1562587357247.png" alt="1562587357247" /></p>
+
+<p>//TODO:屏幕休眠、屏保等问题待解决。</p>
+
+<h4 id="3-3-2-设置魔镜自启动">3.3.2 设置魔镜自启动</h4>
+
+<p><a href="https://github.com/MichMich/MagicMirror/wiki/Auto-Starting-MagicMirror">https://github.com/MichMich/MagicMirror/wiki/Auto-Starting-MagicMirror</a></p>
+
+<h4 id="3-3-3-设置魔镜配置文件">3.3.3 设置魔镜配置文件</h4>
+
+<p><a href="https://github.com/MichMich/MagicMirror">https://github.com/MichMich/MagicMirror</a></p>
+
+<ol>
+<li><p>Copy <code>/home/pi/MagicMirror/config/config.js.sample</code> to <code>/home/pi/MagicMirror/config/config.js</code>.
+<strong>Note:</strong> If you used the installer script. This step is already done for you.</p></li>
+
+<li><p>Modify your required settings.
+Note: You can check your configuration running <code>npm run config:check</code> in <code>/home/pi/MagicMirror</code>.</p></li>
+</ol>
+
+<p>暂时不作自定义，使用默认配置文件。</p>
+
+<p>重新启动魔镜（魔镜退出方法：Ctrl+Q或者Alt调起菜单再在File下列选项中选择q）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">   <span class="nb">cd</span>  /home/pi/MagicMirror
+   npm start</code></pre></td></tr></table>
+</div>
+</div>
+<p>浏览器访问localhost：8080、127.0.0.1:8080(从树莓派上访问)、192.168.137.169:8080（从电脑上访问）</p>
+
+<p>显示结果如下：</p>
+
+<p><img src="/images/1562588302582.png" alt="1562588302582" /></p>
+
+<p>看上去有些地方水土不服需要修改。</p>
+
+<h4 id="3-3-4-魔镜模块配置">3.3.4 魔镜模块配置</h4>
+
+<p><img src="/images/1562588892711.png" alt="1562588892711" /></p>
+
+<h4 id="3-3-5-魔镜第三方模块">3.3.5 魔镜第三方模块</h4>
+
+<p><a href="https://github.com/MichMich/MagicMirror/wiki/3rd-party-modules">https://github.com/MichMich/MagicMirror/wiki/3rd-party-modules</a></p>
+
+<h4 id="3-3-6-魔镜第三方模块开发">3.3.6 魔镜第三方模块开发</h4>
+
+<p><a href="https://github.com/MichMich/MagicMirror/tree/master/modules">https://github.com/MichMich/MagicMirror/tree/master/modules</a></p>
 
     </div>
 
