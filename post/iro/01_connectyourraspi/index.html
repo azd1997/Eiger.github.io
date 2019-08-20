@@ -50,7 +50,7 @@
 
 <meta itemprop="datePublished" content="2019-07-23T10:37:14&#43;08:00" />
 <meta itemprop="dateModified" content="2019-08-15T13:56:37&#43;08:00" />
-<meta itemprop="wordCount" content="2309">
+<meta itemprop="wordCount" content="2293">
 
 
 
@@ -135,7 +135,7 @@
         <div class="post-category">
             <a href="/categories/iro/"> iro </a>
             </div>
-          <span class="more-meta"> 2309 words </span>
+          <span class="more-meta"> 2293 words </span>
           <span class="more-meta"> 5 mins read </span>
         
       </div>
@@ -156,16 +156,18 @@
 <li><a href="#2-初次使用树莓派的一些设置">2. 初次使用树莓派的一些设置</a>
 <ul>
 <li><a href="#2-1-修改用户密码及用户切换">2.1 修改用户密码及用户切换</a></li>
-<li><a href="#2-系统设置">2.系统设置</a></li>
-<li><a href="#3-树莓派-respberry安全关机命令重启命令">3.树莓派 respberry安全关机命令重启命令</a></li>
-<li><a href="#3-1-重启之后发现的问题">3.1 重启之后发现的问题</a></li>
-<li><a href="#4-更换镜像源">4.更换镜像源</a></li>
-<li><a href="#5-远程桌面连接">5.远程桌面连接</a>
+<li><a href="#2-2-系统设置">2.2 系统设置</a></li>
+<li><a href="#2-3-安全关机命令重启命令">2.3 安全关机命令重启命令</a>
 <ul>
-<li><a href="#5-1-vnc连接">5.1 VNC连接</a></li>
-<li><a href="#5-2-teamviwer连接">5.2 Teamviwer连接</a></li>
+<li><a href="#2-3-1-重启之后发现的问题">2.3.1 重启之后发现的问题</a></li>
 </ul></li>
-<li><a href="#6-静态ip配置文件修改法">6 静态IP配置文件修改法</a></li>
+<li><a href="#2-4-更换镜像源">2.4 更换镜像源</a></li>
+<li><a href="#2-5-远程桌面连接">2.5 远程桌面连接</a>
+<ul>
+<li><a href="#2-5-1-vnc连接">2.5.1 VNC连接</a></li>
+<li><a href="#2-5-2-teamviwer连接">2.5.2 Teamviwer连接</a></li>
+</ul></li>
+<li><a href="#2-6-静态ip配置文件修改法">2.6 静态IP配置文件修改法</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -238,9 +240,9 @@
 
 <p><img src="../../../static/images/1562506863061.png" alt="1562506863061" /></p>
 
-<h3 id="2-系统设置">2.系统设置</h3>
+<h3 id="2-2-系统设置">2.2 系统设置</h3>
 
-<p>$ sudo raspi-config进入系统设置界面如下：</p>
+<p><code>sudo raspi-config</code>进入系统设置界面如下：</p>
 
 <p><img src="/images/1562507381154.png" alt="1562507381154" /></p>
 
@@ -252,28 +254,28 @@
 
 <p><img src="/images/1562507514787.png" alt="1562507514787" /></p>
 
-<h3 id="3-树莓派-respberry安全关机命令重启命令">3.树莓派 respberry安全关机命令重启命令</h3>
+<h3 id="2-3-安全关机命令重启命令">2.3 安全关机命令重启命令</h3>
 
 <ul>
 <li><p>树莓派可以通过下面几个命令来实现安全关机：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">sudo shutdown -h now
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo shutdown -h now
 
 sudo halt
 
 sudo poweroff
 
-sudo init 0</pre></td></tr></table>
+sudo init <span class="m">0</span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
@@ -284,19 +286,19 @@ sudo init 0</pre></td></tr></table>
 <li><p>树莓派重启 定时重启方法：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">sudo reboot
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo reboot
 
-shutdown -r now</pre></td></tr></table>
+shutdown -r now</code></pre></td></tr></table>
 </div>
 </div></li>
 </ul>
 
-<h3 id="3-1-重启之后发现的问题">3.1 重启之后发现的问题</h3>
+<h4 id="2-3-1-重启之后发现的问题">2.3.1 重启之后发现的问题</h4>
 
 <p>重启之后，发现192.168.137.10已经连接不上了，使用arp -a发现又多了一个ip。这个是树莓派的新IP。</p>
 
@@ -304,40 +306,45 @@ shutdown -r now</pre></td></tr></table>
 
 <p>这里分析下原因：很可能是我设置的静态IP192.168.137.13未成功，系统仍然进行动态分配IP，所以IP会变，但我做了静态IP的设置，所以结果列表里的IP类型显示为静态。这在之后会重新设置静态IP，现在先用动态IP。</p>
 
-<h3 id="4-更换镜像源">4.更换镜像源</h3>
+<h3 id="2-4-更换镜像源">2.4 更换镜像源</h3>
 
-<p>上面选择了直接通过系统设置更新系统软件包，由于默认采用的是树莓派官方镜像源，所以下载速度比较慢，需要更换国内一些机构维护的镜像源，比如清华、华中科技、浙江大学、阿里等等。去<a href="https://www.raspbian.org/RaspbianMirrors查找。需要注意的是，所换的镜像源最好是系统版本对应的（目前树莓派最新的三个版本从前往后是：Jessie、Stretch、Buster）。">https://www.raspbian.org/RaspbianMirrors查找。需要注意的是，所换的镜像源最好是系统版本对应的（目前树莓派最新的三个版本从前往后是：Jessie、Stretch、Buster）。</a></p>
+<p>上面选择了直接通过系统设置更新系统软件包，由于默认采用的是树莓派官方镜像源，所以下载速度比较慢，需要更换国内一些机构维护的镜像源，比如清华、华中科技、浙江大学、阿里等等。去<a href="https://www.raspbian.org/RaspbianMirrors">https://www.raspbian.org/RaspbianMirrors</a>查找。需要注意的是，所换的镜像源最好是系统版本对应的（目前树莓派最新的三个版本从前往后是：Jessie、Stretch、Buster）。</p>
 
-<p>具体方法为：编辑 /etc/apt/sources.list文件（sudo nano  /etc/apt/sources.list），进行源的替换。</p>
+<p>具体方法为：编辑 <code>/etc/apt/sources.list</code>文件（<code>sudo nano  /etc/apt/sources.list</code>），进行源的替换。</p>
 
 <p><img src="/images/1562509655018.png" alt="1562509655018" /></p>
 
-<p>更换为：（当选定一个源想要更换时，最好同时打开该源网页以及官方<a href="http://raspbian.raspberrypi.org/raspbian/网页进行比对查看。）">http://raspbian.raspberrypi.org/raspbian/网页进行比对查看。）</a></p>
-
-<p><a href="https://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/">https://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/</a></p>
-
-<p>nano编辑器 CTRL O保存并指定文件名，CTRL X退出</p>
+<p>更换为：（当选定一个源想要更换时，最好同时打开该源网页以及官方<a href="http://raspbian.raspberrypi.org/raspbian/">http://raspbian.raspberrypi.org/raspbian/</a>网页进行比对查看。）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">https://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/</code></pre></td></tr></table>
+</div>
+</div>
+<p>nano编辑器 <code>CTRL O</code>保存并指定文件名，<code>CTRL X</code>退出</p>
 
 <p><img src="C:Users37419AppDataRoamingTyporatypora-user-images1562510657876.png" alt="1562510657876" /></p>
 
 <p>最后更新一下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">sudo apt-get update</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo apt-get update</code></pre></td></tr></table>
 </div>
 </div>
 <p><img src="/images/1562510949420.png" alt="1562510949420" /></p>
 
 <p>下载速度引起舒适~</p>
 
-<h3 id="5-远程桌面连接">5.远程桌面连接</h3>
+<h3 id="2-5-远程桌面连接">2.5 远程桌面连接</h3>
 
 <p>树莓派包括所有主流计算机系统都有很多远程桌面控制软件，比较常见的有：XRDP、VNCviewer、Teamviewer、Wayknow等等。因为VNCViewer其实是树莓派自带的，只不过默认不开启，所以我先使用VNC进行桌面连接。后边会安装Teamviewer（需要桌面环境进行配置），Teamviewer最大的好处是可以外网访问。</p>
 
-<h4 id="5-1-vnc连接">5.1 VNC连接</h4>
+<h4 id="2-5-1-vnc连接">2.5.1 VNC连接</h4>
 
 <p>首先在设置里开启VNC</p>
 
@@ -357,19 +364,19 @@ shutdown -r now</pre></td></tr></table>
 
 <p>接下来跟着系统引导设置一些地区之类无关痛痒的选项，略过。Wifi设置在桌面环境下非常容易，也略过。</p>
 
-<h4 id="5-2-teamviwer连接">5.2 Teamviwer连接</h4>
+<h4 id="2-5-2-teamviwer连接">2.5.2 Teamviwer连接</h4>
 
-<p>比较好的一篇文章：<a href="https://www.cnblogs.com/trilobita/p/10506094.html；https://blog.csdn.net/cungudafa/article/details/84495472">https://www.cnblogs.com/trilobita/p/10506094.html；https://blog.csdn.net/cungudafa/article/details/84495472</a></p>
+<p>比较好的一篇文章：<a href="https://www.cnblogs.com/trilobita/p/10506094.html">https://www.cnblogs.com/trilobita/p/10506094.html</a>；<a href="https://blog.csdn.net/cungudafa/article/details/84495472">https://blog.csdn.net/cungudafa/article/details/84495472</a></p>
 
 <p>由于我习惯了桌面配置，所以直接安装好再桌面设置就好了，不多说。</p>
 
-<h3 id="6-静态ip配置文件修改法">6 静态IP配置文件修改法</h3>
+<h3 id="2-6-静态ip配置文件修改法">2.6 静态IP配置文件修改法</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">sudo nano /etc/dhcpcd.conf</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo nano /etc/dhcpcd.conf</code></pre></td></tr></table>
 </div>
 </div>
 <p><img src="/images/1562513217988.png" alt="1562513217988" /></p>
@@ -379,25 +386,25 @@ shutdown -r now</pre></td></tr></table>
 <p>因为我是通过笔记本Wlan共享给树莓派所连接的有线网卡，所以这里我应该设置为192.168.137.x网段</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span></pre></td>
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">interface eth0
-static ip_address=192.168.137.13/24
-static routers=192.168.137.1
-static domain_name_servers=8.8.8.8 114.114.114.114</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">interface eth0
+static <span class="nv">ip_address</span><span class="o">=</span><span class="m">192</span>.168.137.13/24
+static <span class="nv">routers</span><span class="o">=</span><span class="m">192</span>.168.137.1
+static <span class="nv">domain_name_servers</span><span class="o">=</span><span class="m">8</span>.8.8.8 <span class="m">114</span>.114.114.114</code></pre></td></tr></table>
 </div>
 </div>
 <p>保存后重启</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">sudo reboot</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">sudo reboot</code></pre></td></tr></table>
 </div>
 </div>
 <p>重新查看下树莓派的IP：</p>
